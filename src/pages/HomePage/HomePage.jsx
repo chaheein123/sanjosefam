@@ -35,8 +35,10 @@ export default class HomePage extends React.Component {
               <HomeRightComponent />
             </Col>
           </Row>
+          {/* <Row>
+            Pagination
+          </Row> */}
         </Container>
-        
       </div>
     )
   }
