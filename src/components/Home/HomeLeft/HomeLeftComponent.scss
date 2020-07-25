@@ -1,0 +1,19 @@
+@import "../../../mixins/component-mixins.scss";
+
+.HomeLeftComponent {
+  height: 900px;
+
+  .homeleft-tags {
+    @include subcomponents;
+    height: 300px;
+    h5 {
+      color: black;
+    }
+  }
+
+  .homeleft-top-posts {
+    @include subcomponents;
+    height: 400px;
+  }
+
+};
