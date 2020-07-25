@@ -1,13 +1,13 @@
 @import "../../mixins/main-mixins.scss";
 .HomePage {
   position: relative;
-  background: orange;
-  // width: 100%;
   height: 1000px;
+  margin-top: 3rem;
 
-  .homecols {
+  .home-cols {
     border: 1px black solid;
     height: 200px;
+    padding: 0 10px;
   }
 
   .home-right {
