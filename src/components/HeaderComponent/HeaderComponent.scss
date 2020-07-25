@@ -1,0 +1,37 @@
+.HeaderComponent {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.39);
+  position: relative;
+
+  .honey-icon {
+    height: 34px;
+  };
+
+  .navbar-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.12rem;
+    li:not(:last-child) {
+      margin-right: 20px;
+    };
+    li {
+      padding: 6px 8px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-underline {
+      border-bottom: 2px orange solid;
+    }
+  }
+}
