@@ -16,7 +16,7 @@ export const HeaderComponent = (props) => {
   return (
     <nav className="HeaderComponent">
       
-      <Link className="Links" to="/">
+      <Link className="Links" to="/"  style={{alignSelf: "center"}}>
         <img src="images/logo/honey_icon.png" className="honey-icon" alt="logo"/>
       </Link>
       

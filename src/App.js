@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import { RootPage } from "./pages/RootPage/RootPage";
 
 import './App.scss';
