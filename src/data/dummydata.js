@@ -24,7 +24,42 @@ let topPosts = [
   {id:200, createdBy: "Pete Kim", title: "Facebook internship!"},
 ];
 
+let posts = [
+  {
+    id: 0,
+    createdBy: "차기원님",
+    ownImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9hKeM6QijaSI8-_A2fReytM6ge-amF5uakw&usqp=CAU", 
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQHHxdkjR437h-DeaGoMDIjbbR3qpHDgqo53Q&usqp=CAU",
+    title: "어떻게 하면 머리가 좋아질까요?",
+    createdAt: "1 month ago",
+    tags: ["Locals", "이민/비자", "연예", "Beauty"],
+    content: "문의하신 바는 '동네'와 '동내'의 뜻과 용례를 살피시면 잘 이해하실 수 있을 것으로 보여서, 아래에 사전 정보를 제시하여 드리니, 비교하여 살펴 ...",
+  },
+  {
+    id: 1,
+    createdBy: "장종훈님",
+    ownImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3RYLn3NMM8XW_0_AuNF-4SBMv15ZQpmRjSg&usqp=CAU",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQHHxdkjR437h-DeaGoMDIjbbR3qpHDgqo53Q&usqp=CAU",
+    title: "어떻게 하면 머리가 좋아질까요?",
+    createdAt: "1 month ago",
+    tags: ["Locals", "이민/비자", "연예", "Beauty"],
+    content: "문의하신 바는 '동네'와 '동내'의 뜻과 용례를 살피시면 잘 이해하실 수 있을 것으로 보여서, 아래에 사전 정보를 제시하여 드리니, 비교하여 살펴 ...",
+  },
+  {
+    id: 2,
+    createdBy: "차기원님",
+    ownImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSRT6RysTQ_q7eDN5j4O13L6uykiZQ5tn77wQ&usqp=CAU",
+    imageUrl: null,
+    title: "어떻게 하면 머리가 좋아질까요?",
+    createdAt: "1 month ago",
+    tags: ["Locals", "이민/비자", "연예", "Beauty"],
+    content: "문의하신 바는 '동네'와 '동내'의 뜻과 용례를 살피시면 잘 이해하실 수 있을 것으로 보여서, 아래에 사전 정보를 제시하여 드리니, 비교하여 살펴 ...",
+  },
+];
+
 export {
   top10tags,
   topPosts,
+  posts,
+
 }
