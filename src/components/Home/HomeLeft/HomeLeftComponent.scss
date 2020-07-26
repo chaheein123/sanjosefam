@@ -13,13 +13,18 @@
 
   .homeleft-top-posts {
     @include subcomponents;
-    h5 {
-      color: black;
-    }
-    div {
-      p {
-        margin-bottom: 5px;
+    color: black;
+    .homeleft-posts {
+      display: flex;
+      align-items: flex-start;
+
+      .homeleft-badges {
+        position: relative;
+        top: 3.2px;
+        margin-right: 0.68rem;
+        // width: 27px;
       }
+
     }
   }
 
