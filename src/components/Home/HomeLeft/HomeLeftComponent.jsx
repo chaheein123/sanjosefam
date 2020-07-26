@@ -1,5 +1,5 @@
 import React from 'react';
-import {top10tags} from "../../../data/dummydata";
+import {top10tags, topPosts} from "../../../data/dummydata";
 
 import "./HomeLeftComponent.scss";
 
@@ -17,12 +17,19 @@ const HomeLeftComponent = () => {
             )
           })
         }
-
-
       </div>
 
       <div className="homeleft-top-posts">
-
+        <h5>인기글</h5>
+        {
+          topPosts.map((post,index) => {
+            return(
+              <div key={index}>
+                <p>{post.title}</p>
+              </div>
+            )
+          })
+        }
 
 
       </div>

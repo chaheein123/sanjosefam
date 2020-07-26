@@ -13,7 +13,14 @@
 
   .homeleft-top-posts {
     @include subcomponents;
-    height: 400px;
+    h5 {
+      color: black;
+    }
+    div {
+      p {
+        margin-bottom: 5px;
+      }
+    }
   }
 
 };
