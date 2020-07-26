@@ -1,0 +1,14 @@
+@import "../../../mixins/component-mixins.scss";
+
+.HomeCenterComponent {
+  @include subcomponents;
+  height: 900px;
+
+
+  .homecenter-portraits {
+    height: 30px;
+    width: 40px;
+  }
+
+
+};

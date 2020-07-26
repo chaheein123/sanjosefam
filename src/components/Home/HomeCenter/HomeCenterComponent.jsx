@@ -1,11 +1,13 @@
 import React from 'react';
+import HomeCenterPostComponent from "./HomeCenterPostComponent/HomeCenterPostComponent";
 
 import "./HomeCenterComponent.scss";
 
 const HomeCenterComponent = () => {
   return (
-    <div>
-      home center
+    <div className="HomeCenterComponent">
+      {/* home center */}
+      <HomeCenterPostComponent />
     </div>
   )
 }
