@@ -11,6 +11,10 @@
     
   }
 
+  .home-left {
+
+  }
+
   .home-right {
     border: 1px black solid;
     // @include media-breakpoint-down(xs) {
@@ -23,7 +27,8 @@
     // }
 
     // @include media-breakpoint-up(lg) {
-    //   top: 0;
+    //   position: sticky;
+    //   top: 300px;
     // }
 
     

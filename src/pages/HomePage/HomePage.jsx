@@ -23,7 +23,7 @@ export default class HomePage extends React.Component {
       <div className="HomePage">
         <Container>
           <Row>
-            <Col xs={{ order: 1, span: 12}} md={{ order: 0, span: 4}} lg={3} className="home-cols">
+            <Col xs={{ order: 1, span: 12}} md={{ order: 0, span: 4}} lg={3} className="home-cols home-left">
               <HomeLeftComponent />
             </Col>
 
