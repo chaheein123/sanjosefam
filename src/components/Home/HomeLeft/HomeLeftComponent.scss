@@ -1,7 +1,7 @@
 @import "../../../mixins/component-mixins.scss";
 
 .HomeLeftComponent {
-  height: 900px;
+  // height: 900px;
 
   .homeleft-tags {
     @include subcomponents;
