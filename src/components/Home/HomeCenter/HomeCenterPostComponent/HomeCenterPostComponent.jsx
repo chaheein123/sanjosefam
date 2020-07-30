@@ -10,9 +10,7 @@ const HomeCenterPostComponent = (props) => {
       Post Component
 
 
-      {/* {id}
-      {createdBy}
-      {ownImg} */}
+
 
       
     </div>

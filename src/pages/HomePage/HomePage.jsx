@@ -15,7 +15,7 @@ export default class HomePage extends React.Component {
   };
 
   componentDidMount() {
-
+    
   };
 
   render() {

@@ -13,7 +13,7 @@
 
   .homeleft-top-posts {
     @include subcomponents;
-    color: black;
+    // color: black;
     .homeleft-posts {
       display: flex;
       align-items: flex-start;
