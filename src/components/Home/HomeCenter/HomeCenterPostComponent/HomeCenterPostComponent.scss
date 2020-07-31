@@ -11,15 +11,33 @@
   .mainpost-profile {
     display: flex;
     align-items: flex-start;
+    // align-items: center;
 
     .mainpost-profile-header {
-      height: 40px;
-      p {
+      // border: 1px black solid;
+      height: 100%;
+      margin-left: 0.62rem;
+      .mainpost-profile-header-p {
         line-height: 1;
         margin: 0;
+        font-size: 0.9rem;
       }
-      margin-left: 0.5rem;
+      .mainpost-profile-name {
+        color: rgb(66, 29, 66);
+      }
+      .mainpost-profile-date {
+        color: rgba(0, 0, 0, 0.383);
+        margin-top: 6.6px;
+        font-size: 0.81rem;
+        font-weight: 510;
+      }
+
+      
     }
+  }
+
+  .mainpost-content {
+    margin-top: 1rem;
   }
 
 

@@ -15,12 +15,12 @@ const HomeCenterPostComponent = (props) => {
       <div className="mainpost-profile">
         <img src={ownImg} alt={createdBy} width="34" height="34" style={{borderRadius: "4px"}}/>
         <div className="mainpost-profile-header">
-          <p>fefefef</p>
-          <p>{createdAt}</p>
+          <p className="mainpost-profile-name mainpost-profile-header-p">fefefef</p>
+          <p className="mainpost-profile-date mainpost-profile-header-p">{createdAt}</p>
         </div>
       </div>
 
-      <div>
+      <div className="mainpost-content">
         {content}
       </div>
 

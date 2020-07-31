@@ -9,7 +9,7 @@ const HomeLeftComponent = () => {
   return (
     <div className="HomeLeftComponent">
       <div className="homeleft-tags">
-        <h5>인기 태그</h5>
+        <h5>인기태그</h5>
         {
           top10tags.map((tag,index) => {
             return(
