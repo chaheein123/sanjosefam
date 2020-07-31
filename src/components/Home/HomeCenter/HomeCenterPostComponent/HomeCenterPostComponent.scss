@@ -1,5 +1,29 @@
 .HomeCenterPostComponent {
-  border: 1px black solid;
-  
+  padding: 1.4rem 0;
+
+  .mainpost-title {
+    margin-bottom: 1rem;
+    .mainpost-title-header {
+      font-weight: 700;
+    }
+  }
+
+  .mainpost-profile {
+    display: flex;
+    align-items: flex-start;
+
+    .mainpost-profile-header {
+      height: 40px;
+      p {
+        line-height: 1;
+        margin: 0;
+      }
+      margin-left: 0.5rem;
+    }
+  }
+
+
+
+
 
 }

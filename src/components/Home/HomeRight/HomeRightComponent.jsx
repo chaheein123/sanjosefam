@@ -1,9 +1,11 @@
 import React from 'react';
 
+import "./HomeRightComponent.scss";
+
 const HomeRightComponent = () => {
   return (
-    <div>
-      home rigght
+    <div className="HomeRightComponent">
+      home rigghttttt
     </div>
   )
 }

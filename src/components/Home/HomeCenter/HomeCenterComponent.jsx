@@ -7,11 +7,6 @@ import "./HomeCenterComponent.scss";
 
 const HomeCenterComponent = () => {
   const thePosts = posts;
-  // console.log(thePosts, "기무이")
-
-  // React.useEffect(() => {
-  //   let posts = posts;
-  // });
 
   return (
     <div className="HomeCenterComponent">

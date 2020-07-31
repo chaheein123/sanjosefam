@@ -28,7 +28,7 @@ const HomeLeftComponent = () => {
             return(
               <div key={index} className="homeleft-posts">
                 <Badge
-                variant="secondary"
+                variant="success"
                 className="homeleft-badges"
                 >
                   {index+1}

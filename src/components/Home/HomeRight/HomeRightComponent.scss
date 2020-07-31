@@ -1,0 +1,6 @@
+@import "../../../mixins/component-mixins.scss";
+
+.HomeRightComponent {
+  @include subcomponents;
+  
+}

@@ -2,12 +2,14 @@
 
 .HomeCenterComponent {
   @include subcomponents;
-  // height: 900px;
 
+  // .homecenter-portraits {
+  //   height: 30px;
+  //   width: 40px;
+  // }
 
-  .homecenter-portraits {
-    height: 30px;
-    width: 40px;
+  .HomeCenterPostComponent:not(:last-child){
+    border-bottom: 1.1px rgba(0, 0, 0, 0.13) solid;
   }
 
 
