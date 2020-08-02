@@ -11,7 +11,7 @@ const HomeCenterComponent = () => {
   return (
     <div className="HomeCenterComponent">
       {
-        thePosts.length ? 
+        thePosts ? 
           thePosts.map(post => 
             <HomeCenterPostComponent
               key={post.id}
