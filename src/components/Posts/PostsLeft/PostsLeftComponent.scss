@@ -1,9 +1,9 @@
 @import "../../../mixins/component-mixins.scss";
 
-.HomeLeftComponent {
+.PostsLeftComponent {
   // height: 900px;
 
-  .homeleft-tags {
+  .postsleft-tags {
     @include subcomponents;
     // height: 300px;
     h5 {
@@ -11,14 +11,14 @@
     }
   }
 
-  .homeleft-top-posts {
+  .postsleft-top-posts {
     @include subcomponents;
     // color: black;
-    .homeleft-posts {
+    .postsleft-posts {
       display: flex;
       align-items: flex-start;
 
-      .homeleft-badges {
+      .postsleft-badges {
         position: relative;
         top: 3.2px;
         margin-right: 0.68rem;

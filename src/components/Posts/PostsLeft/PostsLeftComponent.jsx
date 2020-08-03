@@ -2,13 +2,12 @@ import React from 'react';
 import Badge from 'react-bootstrap/Badge';
 import {top10tags, topPosts} from "../../../data/dummydata";
 
+import "./PostsLeftComponent.scss";
 
-import "./HomeLeftComponent.scss";
-
-const HomeLeftComponent = () => {
+const PostsLeftComponent = () => {
   return (
-    <div className="HomeLeftComponent">
-      <div className="homeleft-tags">
+    <div className="PostsLeftComponent">
+      <div className="postsleft-tags">
         <h5>인기태그</h5>
         {
           top10tags.map((tag,index) => {
@@ -21,15 +20,15 @@ const HomeLeftComponent = () => {
         }
       </div>
 
-      <div className="homeleft-top-posts">
+      <div className="postsleft-top-posts">
         <h5>인기글</h5>
         {
           topPosts.map((post,index) => {
             return(
-              <div key={index} className="homeleft-posts">
+              <div key={index} className="postsleft-posts">
                 <Badge
                 variant="success"
-                className="homeleft-badges"
+                className="postsleft-badges"
                 >
                   {index+1}
                 </Badge>{' '}
@@ -45,4 +44,4 @@ const HomeLeftComponent = () => {
   )
 }
 
-export default HomeLeftComponent;
+export default PostsLeftComponent;

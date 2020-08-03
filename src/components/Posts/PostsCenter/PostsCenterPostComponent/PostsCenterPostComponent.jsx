@@ -1,12 +1,12 @@
 import React from 'react';
 
-import "./HomeCenterPostComponent.scss";
+import "./PostsCenterPostComponent.scss";
 
-const HomeCenterPostComponent = (props) => {
+const PostsCenterPostComponent = (props) => {
   
   const { id, createdBy, ownImg, title, createdAt, tags, content } = props;
   return (
-    <div className="HomeCenterPostComponent">
+    <div className="PostsCenterPostComponent">
       
       <div className="mainpost-title">
         <h5 className="mainpost-title-header">{title}</h5>
@@ -33,4 +33,4 @@ const HomeCenterPostComponent = (props) => {
   )
 }
 
-export default HomeCenterPostComponent;
+export default PostsCenterPostComponent;

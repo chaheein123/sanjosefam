@@ -1,19 +1,19 @@
 import React from 'react';
-import HomeCenterPostComponent from "./HomeCenterPostComponent/HomeCenterPostComponent";
+import PostsCenterPostComponent from "./PostsCenterPostComponent/PostsCenterPostComponent";
 // import axios from "../../../utils/httpClient";
 import { posts } from "../../../data/dummydata";
 
-import "./HomeCenterComponent.scss";
+import "./PostsCenterComponent.scss";
 
-const HomeCenterComponent = () => {
+const PostsCenterComponent = () => {
   const thePosts = posts;
 
   return (
-    <div className="HomeCenterComponent">
+    <div className="PostsCenterComponent">
       {
         thePosts ? 
           thePosts.map(post => 
-            <HomeCenterPostComponent
+            <PostsCenterPostComponent
               key={post.id}
               {...post}
             />
@@ -25,4 +25,4 @@ const HomeCenterComponent = () => {
   )
 }
 
-export default HomeCenterComponent;
+export default PostsCenterComponent;
