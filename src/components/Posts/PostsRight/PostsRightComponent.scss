@@ -1,6 +1,25 @@
 @import "../../../mixins/component-mixins.scss";
+@import "../../../mixins/main-mixins.scss";
 
 .PostsRightComponent {
-  @include subcomponents;
+  // @include subcomponents;
   
+  .postsright-post-button {
+    margin-bottom: 2rem;
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  .postsright-post-button-modal {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0.84;
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
 }

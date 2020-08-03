@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import PostsCenterComponent from "../../components/Posts/PostsCenter/PostsCenterComponent";
 import PostsLeftComponent from "../../components/Posts/PostsLeft/PostsLeftComponent";
 import PostsRightComponent from "../../components/Posts/PostsRight/PostsRightComponent";
+// import PostsCenterTopComponent from "../../components/Posts/PostsCenter/PostsCenterTopComponent/PostsCenterTopComponent";
 
 import "./PostsPage.scss";
 
@@ -28,6 +29,7 @@ export default class PostsPage extends React.Component {
             </Col>
 
             <Col xs={{ order: 0, span: 12}} md={{ order: 1, span: 8}} lg={6} className="posts-cols">
+              {/* <PostsCenterTopComponent /> */}
               <PostsCenterComponent />
             </Col>
 
