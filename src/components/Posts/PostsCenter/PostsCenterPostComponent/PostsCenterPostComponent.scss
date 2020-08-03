@@ -1,0 +1,47 @@
+.PostsCenterPostComponent {
+  padding: 1.4rem 0;
+
+  .mainpost-title {
+    margin-bottom: 1rem;
+    .mainpost-title-header {
+      font-weight: 700;
+    }
+  }
+
+  .mainpost-profile {
+    display: flex;
+    align-items: flex-start;
+    // align-items: center;
+
+    .mainpost-profile-header {
+      // border: 1px black solid;
+      height: 100%;
+      margin-left: 0.62rem;
+      .mainpost-profile-header-p {
+        line-height: 1;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+      .mainpost-profile-name {
+        color: rgb(66, 29, 66);
+      }
+      .mainpost-profile-date {
+        color: rgba(0, 0, 0, 0.383);
+        margin-top: 6.6px;
+        font-size: 0.81rem;
+        font-weight: 510;
+      }
+
+      
+    }
+  }
+
+  .mainpost-content {
+    margin-top: 1rem;
+  }
+
+
+
+
+
+}

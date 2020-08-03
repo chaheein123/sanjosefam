@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
 
-
 import "./HeaderComponent.scss";
-
 
 export const HeaderComponent = (props) => {
 
@@ -25,21 +23,23 @@ export const HeaderComponent = (props) => {
       </Link>
       
       <ul className="navbar-menu">
-        <Link className="Links navbar-menu-links" to="/">
-          <li className={props.history.location.pathname === "/" ? "navbar-underline" : null}>
-              Home
+        <Link className="Links navbar-menu-links" to="/home">
+          <li className={props.history.location.pathname === "/home" ? "navbar-underline" : null}>
+            홈
           </li>
         </Link>
-        <Link className="Links navbar-menu-links" to="/jobs">
-          <li className={props.history.location.pathname === "/jobs" ? "navbar-underline" : null}>
-              Jobs
+        <Link className="Links navbar-menu-links" to="/posts">
+          <li className={props.history.location.pathname === "/posts" ? "navbar-underline" : null}>
+            게시판
           </li>
         </Link>
-        <Link className="Links navbar-menu-links" to="/housing">
-          <li className={props.history.location.pathname === "/housing" ? "navbar-underline" : null}>
-            Housing
+        {/* <Link className="Links navbar-menu-links"> */}
+        <div className="navbar-menu-links">
+          <li>
+            로그인
           </li>
-        </Link>
+        </div>
+        {/* </Link> */}
 
 
 
@@ -47,8 +47,8 @@ export const HeaderComponent = (props) => {
           <Link className="Links" to="/">
             <Dropdown.Item href="/">Home</Dropdown.Item>
           </Link>
-          <Link className="Links" to="/jobs">
-            <Dropdown.Item href="/">Jobs</Dropdown.Item>
+          <Link className="Links" to="/posts">
+            <Dropdown.Item href="/">게시물</Dropdown.Item>
           </Link>
           <Link className="Links" to="/housing">
             <Dropdown.Item href="/">Housing</Dropdown.Item>

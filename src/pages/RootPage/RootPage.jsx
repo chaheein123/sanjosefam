@@ -6,9 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Col from "react-bootstrap/Col";
 
 import { HeaderComponent } from "../../components/HeaderComponent/HeaderComponent";
-import HomePage from "../HomePage/HomePage.jsx";
-import JobsPage from "../JobsPage/JobsPage";
-import HousingPage from "../HousingPage/HousingPage";
+import PostsPage from "../PostsPage/PostsPage";
+import HomePage from "../HomePage/HomePage";
 
 import "./RootPage.scss";
 
@@ -18,9 +17,9 @@ export const RootPage = () => {
       <Router>
         <Route path="/" component={ HeaderComponent } />
         <Switch>
-          <Route exact path="/" component={ HomePage } />
-          <Route path="/jobs" component={ JobsPage } />
-          <Route path="/housing" component={ HousingPage } />
+          <Route exact path="/home" component={ HomePage } />
+          <Route path="/posts" component={ PostsPage } />
+          {/* <Route path="/housing" component={ HousingPage } /> */}
         </Switch>
       </Router>
     </div>

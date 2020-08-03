@@ -1,0 +1,14 @@
+@import "../../../mixins/component-mixins.scss";
+
+.PostsCenterComponent {
+  @include subcomponents;
+  padding-top: 0;
+
+  .PostsCenterPostComponent:not(:last-child){
+    border-bottom: 1.1px rgba(0, 0, 0, 0.13) solid;
+  }
+
+  
+
+
+};

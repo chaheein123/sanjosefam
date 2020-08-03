@@ -1,0 +1,39 @@
+@import "../../mixins/main-mixins.scss";
+.PostsPage {
+  position: relative;
+  height: 4000px;
+  margin-top: 3rem;
+
+  .posts-cols {
+    // border: 1px black solid;
+    // height: 200px;
+    padding: 0 10px;
+  }
+
+  .posts-left {
+    
+  }
+
+  .posts-right {
+    // border: 1px black solid;
+    // @include media-breakpoint-down(xs) {
+    //   display: none;
+    // }
+
+    // @include media-breakpoint-down(md) {
+    //   background-color: pink;
+    //   top: -170px;
+    // }
+
+    // @include media-breakpoint-up(lg) {
+    //   position: sticky;
+    //   top: 300px;
+    // }
+
+    
+
+
+  }
+
+
+}
