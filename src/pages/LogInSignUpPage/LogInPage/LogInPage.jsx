@@ -12,15 +12,21 @@ const LogInPage = () => {
 
   const [userEmail, setUserEmail] = React.useState("");
   const [userPw, setUserPw] = React.useState("");
+  const [emailError, setEmailError] = React.useState("");
+  const [pwError, setPwError] = React.useState("");
 
-  // const handleEmailChange = event => {
-  //   setUserEmail(event.target.value);
-  //   console.log(userEmail);
-  // };
+  React.useEffect(() => {
+    setEmailError("");
+  }, [userEmail]);
 
-  // React.useEffect(() => {
-
-  // });
+  const handleSubmit = () => {
+    // email validation
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail)) {
+      console.log("the user email is valid!!!!")
+    } else {
+      setEmailError("The email you entered is incorrect.")
+    }
+  };
 
   return(
     <div className="LogInPage">
@@ -37,8 +43,9 @@ const LogInPage = () => {
               value={userEmail}
               onChange={(event)=> setUserEmail(event.target.value)}
             />
+
             <Form.Text className="text-muted form-sub">
-              We'll never share your email with anyone else.
+              {emailError}
             </Form.Text>
             <br />
             <Form.Control
@@ -56,7 +63,7 @@ const LogInPage = () => {
               variant="success"
               size="lg"
               block
-              onClick={() => {console.log(userEmail, userPw)}}
+              onClick={handleSubmit}
             >
               로그인
             </Button>
