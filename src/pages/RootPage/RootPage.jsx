@@ -12,6 +12,7 @@ import HomePage from "../HomePage/HomePage";
 import LogInPage from "../LogInSignUpPage/LogInPage/LogInPage";
 
 import "./RootPage.scss";
+import SignUpPage from "../LogInSignUpPage/SignUpPage/SignUpPage";
 
 export const RootPage = () => {
   return (
@@ -22,6 +23,7 @@ export const RootPage = () => {
           <Route exact path="/home" component={ HomePage } />
           <Route path="/posts" component={ PostsPage } />
           <Route path="/login" component={ LogInPage } />
+          <Route path="/signup" component={ SignUpPage } />
         </Switch>
       </Router>
     </div>

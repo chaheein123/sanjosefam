@@ -1,6 +1,7 @@
 @import "../../mixins/main-mixins.scss";
 
 .HeaderComponent {
+
   height: 50px;
   padding: 0 5%;
   position: sticky;
@@ -60,3 +61,12 @@
     }
   }
 }
+
+@media only screen and (max-width: 256px) {
+  .honey-icon {
+    display: none;
+  }
+  * {
+    background-color: pink;
+  }
+};
