@@ -1,51 +1,20 @@
 @import "../../../mixins/main-mixins.scss";
 
 .LogInPage {
-  padding: 0 3rem;
-  position: relative;
-  min-height: 560px;
+  text-align: center;
+  margin-top: 4rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include media-breakpoint-down(md) {
-    padding: 0;
-    height: 100%;
-  }
-  .login-left {
-    max-width: 500px;
-    // border: 1px black solid;
-    width: 50%;
-    text-align: center;
-    .login-logo {
-      width: 90%;
-    }
-    @include media-breakpoint-down(md) {
-      display: none;
-    }
-  };
+  .LogInForm {
+    display: inline-block;
+    width: 100%;
+    max-width: 31rem;
+    padding: 0 1rem;
 
-  .login-right {
-    max-width: 500px;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.52);
-    padding: 3rem;
-    width: 50%;
-    @include media-breakpoint-down(md) {
-      width: 100%;
-      padding: 0;
-      height: 100%;
-      box-shadow: 0 0 0;
-      padding: 2.23rem;
-      // border: 30px black solid;
-    }
 
-    h3 {
-      color: rgba(0, 0, 0, 0.856);
+    .form-sub {
+      text-align: left;
+      margin-left: 6px;
+      color: red;
     }
-
-    .login-button {
-      margin-top: 2rem;
-    }
-    
   }
 };

@@ -10,38 +10,63 @@ import "./LogInPage.scss";
 
 const LogInPage = () => {
 
+  const [userEmail, setUserEmail] = React.useState("");
+  const [userPw, setUserPw] = React.useState("");
+
+  // const handleEmailChange = event => {
+  //   setUserEmail(event.target.value);
+  //   console.log(userEmail);
+  // };
+
+  // React.useEffect(() => {
+
+  // });
 
   return(
     <div className="LogInPage">
-      <div className="login-left">
-        <img src="images/logo/LoginLogo.png" className="login-logo" alt="logo"/>
-      </div>
-
-      <div className="login-right">
-        <h3>Welcome back</h3>
+      <div className="LogInForm">
+        <img src="images/logo/LoginLogo.png" height="110" alt="logo"/>
         <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+          <Form.Group>
+            <br />
+            <br />
+            <Form.Control
+              type="email"
+              placeholder="이메일"
+              size="lg"
+              value={userEmail}
+              onChange={(event)=> setUserEmail(event.target.value)}
+            />
+            <Form.Text className="text-muted form-sub">
+              We'll never share your email with anyone else.
+            </Form.Text>
+            <br />
+            <Form.Control
+              type="password"
+              placeholder="비밀번호"
+              size="lg"
+              value={userPw}
+              onChange={(event)=> setUserPw(event.target.value)}
+            />
+            <Form.Text className="text-muted form-sub">
+              We'll never share your email with anyone else.
+            </Form.Text>
+            <br />
+            <Button
+              variant="success"
+              size="lg"
+              block
+              onClick={() => {console.log(userEmail, userPw)}}
+            >
+              로그인
+            </Button>
           </Form.Group>
-
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
-          {/* <Form.Group controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group> */}
-          <Button variant="success" type="Log In" className="login-button" block>
-            Submit
-          </Button>
         </Form>
-        <div>
 
-          {/* <Link>회원가입</Link>
-          <Link>아이디/비밀번호 찾기</Link> */}
-        </div>
       </div>
+
+
+
     </div>
   );
 };
