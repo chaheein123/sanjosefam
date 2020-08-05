@@ -4,8 +4,8 @@ import React from "react";
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
+// import DropdownButton from 'react-bootstrap/DropdownButton';
+// import Dropdown from 'react-bootstrap/Dropdown'
 
 import "./HeaderComponent.scss";
 
@@ -39,7 +39,7 @@ export const HeaderComponent = (props) => {
           </li>
         </Link>
 
-        <DropdownButton id="dropdown-basic-button" title="Menu" variant="secondary">
+        {/* <DropdownButton id="dropdown-basic-button" title="Menu" variant="secondary">
           <Link className="Links" to="/">
             <Dropdown.Item href="/">Home</Dropdown.Item>
           </Link>
@@ -49,7 +49,7 @@ export const HeaderComponent = (props) => {
           <Link className="Links" to="/housing">
             <Dropdown.Item href="/">Housing</Dropdown.Item>
           </Link>
-        </DropdownButton>
+        </DropdownButton> */}
       </ul>
     </nav>
   )
