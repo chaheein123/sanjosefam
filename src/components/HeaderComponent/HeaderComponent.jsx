@@ -33,15 +33,11 @@ export const HeaderComponent = (props) => {
             게시판
           </li>
         </Link>
-        {/* <Link className="Links navbar-menu-links"> */}
-        <div className="navbar-menu-links">
-          <li>
+        <Link className="Links navbar-menu-links" to="/login">
+          <li className={props.history.location.pathname === "/login" ? "navbar-underline" : null}>
             로그인
           </li>
-        </div>
-        {/* </Link> */}
-
-
+        </Link>
 
         <DropdownButton id="dropdown-basic-button" title="Menu" variant="secondary">
           <Link className="Links" to="/">

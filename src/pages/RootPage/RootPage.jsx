@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { HeaderComponent } from "../../components/HeaderComponent/HeaderComponent";
 import PostsPage from "../PostsPage/PostsPage";
 import HomePage from "../HomePage/HomePage";
+// import SignUpPage from "../LogInSignUpPage/SignUpPage/SignUpPage";
+import LogInPage from "../LogInSignUpPage/LogInPage/LogInPage";
 
 import "./RootPage.scss";
 
@@ -19,7 +21,7 @@ export const RootPage = () => {
         <Switch>
           <Route exact path="/home" component={ HomePage } />
           <Route path="/posts" component={ PostsPage } />
-          {/* <Route path="/housing" component={ HousingPage } /> */}
+          <Route path="/login" component={ LogInPage } />
         </Switch>
       </Router>
     </div>
