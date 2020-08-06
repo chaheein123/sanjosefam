@@ -12,19 +12,32 @@ const LogInPage = () => {
 
   const [userEmail, setUserEmail] = React.useState("");
   const [userPw, setUserPw] = React.useState("");
-  const [emailError, setEmailError] = React.useState("");
-  const [pwError, setPwError] = React.useState("");
+  const [logError, setLogError] = React.useState("");
 
-  React.useEffect(() => {
-    setEmailError("");
-  }, [userEmail]);
+  // React.useEffect(() => {
+  //   setEmailError("");
+  //   setPwError("");
+  // }, [userEmail, userPw]);
+  const handleEmailChange = event => {
+    setUserEmail(event.target.value);
+    setLogError("");
+  };
+
+  const handlePwChange = event => {
+    setUserPw(event.target.value);
+    setLogError("");
+  };
 
   const handleSubmit = () => {
     // email validation
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail)) {
-      console.log("the user email is valid!!!!")
-    } else {
-      setEmailError("The email you entered is incorrect.")
+    if (!userEmail && !userPw) {
+      return;
+    } else if (!userEmail) {
+      setLogError("Please, enter your email")
+    } else if (!userPw) {
+      setLogError("Please, enter your password")
+    } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail)) || userPw.length < 8 || userPw.length > 32) {
+      setLogError("The email or password you entered is incorrect.");
     }
   };
 
@@ -41,23 +54,24 @@ const LogInPage = () => {
               placeholder="이메일"
               size="lg"
               value={userEmail}
-              onChange={(event)=> setUserEmail(event.target.value)}
+              // onChange={(event)=> setUserEmail(event.target.value)}
+              onChange={handleEmailChange}
             />
-
-            <Form.Text className="text-muted form-sub">
-              {emailError}
-            </Form.Text>
+            
             <br />
             <Form.Control
               type="password"
               placeholder="비밀번호"
               size="lg"
               value={userPw}
-              onChange={(event)=> setUserPw(event.target.value)}
+              // onChange={(event)=> setUserPw(event.target.value)}
+              onChange={handlePwChange}
             />
-            <Form.Text className="text-muted form-sub">
-              We'll never share your email with anyone else.
-            </Form.Text>
+
+            <p className="form-sub">
+              {logError}
+            </p>
+
             <br />
             <Button
               variant="success"
