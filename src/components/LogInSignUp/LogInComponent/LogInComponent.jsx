@@ -38,61 +38,54 @@ const LogInComponent = () => {
 
   return(
     <div className="LogInComponent">
-      <div className="LogInForm">
-        <img src="/images/logo/LoginLogo.png" height="110" alt="logo"/>
-        <Form>
-          <Form.Group>
-            <br />
-            <br />
-            <Form.Control
-              type="email"
-              placeholder="이메일"
-              size="lg"
-              value={userEmail}
-              onChange={handleEmailChange}
-              onKeyDown={(event) => {
-                handleSubmit(event);
-              }}
-            />
-            
-            <br />
-            <Form.Control
-              type="password"
-              placeholder="비밀번호"
-              size="lg"
-              value={userPw}
-              onChange={handlePwChange}
-              onKeyDown={(event) => {
-                handleSubmit(event);
-              }}
-            />
+      <Form>
+        <Form.Group>
+          <br />
+          <br />
+          <Form.Control
+            type="email"
+            placeholder="이메일"
+            size="lg"
+            value={userEmail}
+            onChange={handleEmailChange}
+            onKeyDown={(event) => {
+              handleSubmit(event);
+            }}
+          />
+          
+          <br />
+          <Form.Control
+            type="password"
+            placeholder="비밀번호"
+            size="lg"
+            value={userPw}
+            onChange={handlePwChange}
+            onKeyDown={(event) => {
+              handleSubmit(event);
+            }}
+          />
 
-            <p className="form-sub">
-              {logError}
-            </p>
+          <p className="form-sub">
+            {logError}
+          </p>
 
-            <br />
-            <Button
-              variant="success"
-              size="lg"
-              block
-              onClick={handleSubmit}
-            >
-              로그인
-            </Button>
-          </Form.Group>
-        </Form>
+          <br />
+          <Button
+            variant="success"
+            size="lg"
+            block
+            onClick={handleSubmit}
+          >
+            로그인
+          </Button>
+        </Form.Group>
+      </Form>
 
-        <div className="login-bottom">
-          <span className="login-bottom-register">
-            <Link to="/auth/signup">회원가입</Link>
-          </span> | <span className="login-bottom-rest">아이디 찾기</span> | <span className="login-bottom-rest">비밀번호 찾기</span>
-        </div>
-
+      <div className="login-bottom">
+        <span className="login-bottom-register">
+          <Link to="/auth/signup">회원가입</Link>
+        </span> | <span className="login-bottom-rest">아이디 찾기</span> | <span className="login-bottom-rest">비밀번호 찾기</span>
       </div>
-
-
-
     </div>
   );
 };

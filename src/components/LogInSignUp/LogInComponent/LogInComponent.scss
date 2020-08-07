@@ -1,34 +1,23 @@
 @import "../../../mixins/main-mixins.scss";
-
-.LogInComponent {
-  text-align: center;
-  margin-top: 4rem;
-
-  .LogInForm {
-    display: inline-block;
-    width: 100%;
-    max-width: 31rem;
-    padding: 0 1rem;
-
-    .form-sub {
-      text-align: left;
-      color: rgba(255, 0, 0, 0.815);
-      padding: 0;
-      font-size: 0.79rem;
-      margin: 2px 0 0 6px;
-    };
-
-    .login-bottom {
-      margin-top: 29px;
-  
-      .login-bottom-register {
-        font-weight: bolder;
-        font-size: 1.1rem;
-      }
-
-      .login-bottom-rest {
-        color: rgba(0, 0, 0, 0.555);
-      }
-    }
+.LogInComponent{
+  .form-sub {
+    text-align: left;
+    color: rgba(255, 0, 0, 0.815);
+    padding: 0;
+    font-size: 0.79rem;
+    margin: 2px 0 0 6px;
   };
+
+  .login-bottom {
+    margin-top: 29px;
+
+    .login-bottom-register {
+      font-weight: bolder;
+      font-size: 1.1rem;
+    }
+
+    .login-bottom-rest {
+      color: rgba(0, 0, 0, 0.555);
+    }
+  }
 };

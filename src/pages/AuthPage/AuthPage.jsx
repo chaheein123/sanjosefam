@@ -10,18 +10,15 @@ const AuthPage = () => {
 
   return(
     <div className="AuthPage">
-      <Router>
-        <Switch>
-          <Route exact path="/auth/login" component={ LogInComponent } />
-          <Route exact path="/auth/signup" component={ SignUpComponent } />
-
-        </Switch>
-
-      </Router>
-      
-
-
-
+      <div className="auth-components">
+        <img src="/images/logo/LoginLogo.png" height="110" alt="logo"/>
+        <Router>
+          <Switch>
+            <Route exact path="/auth/login" component={ LogInComponent } />
+            <Route exact path="/auth/signup" component={ SignUpComponent } />
+          </Switch>
+        </Router>
+      </div>
     </div>
   )
 };
