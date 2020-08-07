@@ -12,9 +12,9 @@ const AuthPage = () => {
     <div className="AuthPage">
       <div className="auth-components">
         <img src="/images/logo/LoginLogo.png" height="110" alt="logo"/>
+        {/* <br />
         <br />
-        <br />
-        <br />
+        <br /> */}
         <Switch>
           <Route exact path="/auth/login" component={ LogInComponent } />
           <Route exact path="/auth/signup" component={ SignUpComponent } />
