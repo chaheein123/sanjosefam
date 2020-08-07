@@ -40,8 +40,6 @@ const LogInComponent = () => {
     <div className="LogInComponent">
       <Form>
         <Form.Group>
-          <br />
-          <br />
           <Form.Control
             type="email"
             placeholder="이메일"
@@ -49,7 +47,9 @@ const LogInComponent = () => {
             value={userEmail}
             onChange={handleEmailChange}
             onKeyDown={(event) => {
-              handleSubmit(event);
+              if (event.key === "Enter") {
+                handleSubmit(event);
+              }
             }}
           />
           
@@ -61,7 +61,9 @@ const LogInComponent = () => {
             value={userPw}
             onChange={handlePwChange}
             onKeyDown={(event) => {
-              handleSubmit(event);
+              if (event.key === "Enter") {
+                handleSubmit(event);
+              }
             }}
           />
 
