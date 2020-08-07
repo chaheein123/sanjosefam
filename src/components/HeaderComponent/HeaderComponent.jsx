@@ -19,7 +19,7 @@ export const HeaderComponent = (props) => {
     <nav className="HeaderComponent">
       
       <Link className="Links" to="/home"  style={{alignSelf: "center"}}>
-        <img src="images/logo/main_logo.png" className="honey-icon" alt="logo"/>
+        <img src="/images/logo/main_logo.png" className="honey-icon" alt="logo"/>
       </Link>
       
       <ul className="navbar-menu">
@@ -33,8 +33,8 @@ export const HeaderComponent = (props) => {
             게시판
           </li>
         </Link>
-        <Link className="Links navbar-menu-links" to="/login">
-          <li className={props.history.location.pathname === "/login" ? "navbar-underline" : null}>
+        <Link className="Links navbar-menu-links" to="/auth/login">
+          <li className={props.history.location.pathname.includes("/auth") ? "navbar-underline" : null}>
             로그인
           </li>
         </Link>

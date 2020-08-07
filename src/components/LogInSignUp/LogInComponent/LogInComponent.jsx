@@ -4,20 +4,16 @@ import React from 'react';
 // import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import "./LogInPage.scss";
+import "./LogInComponent.scss";
 
-const LogInPage = () => {
+const LogInComponent = () => {
 
   const [userEmail, setUserEmail] = React.useState("");
   const [userPw, setUserPw] = React.useState("");
   const [logError, setLogError] = React.useState("");
 
-  // React.useEffect(() => {
-  //   setEmailError("");
-  //   setPwError("");
-  // }, [userEmail, userPw]);
   const handleEmailChange = event => {
     setUserEmail(event.target.value);
     setLogError("");
@@ -29,7 +25,6 @@ const LogInPage = () => {
   };
 
   const handleSubmit = () => {
-    // email validation
     if (!userEmail && !userPw) {
       return;
     } else if (!userEmail) {
@@ -42,9 +37,9 @@ const LogInPage = () => {
   };
 
   return(
-    <div className="LogInPage">
+    <div className="LogInComponent">
       <div className="LogInForm">
-        <img src="images/logo/LoginLogo.png" height="110" alt="logo"/>
+        <img src="/images/logo/LoginLogo.png" height="110" alt="logo"/>
         <Form>
           <Form.Group>
             <br />
@@ -89,7 +84,9 @@ const LogInPage = () => {
         </Form>
 
         <div className="login-bottom">
-          <span className="login-bottom-register">회원가입</span> | <span className="login-bottom-rest">아이디 찾기</span> | <span className="login-bottom-rest">비밀번호 찾기</span>
+          <span className="login-bottom-register">
+            <Link to="/auth/signup">회원가입</Link>
+          </span> | <span className="login-bottom-rest">아이디 찾기</span> | <span className="login-bottom-rest">비밀번호 찾기</span>
         </div>
 
       </div>
@@ -100,4 +97,4 @@ const LogInPage = () => {
   );
 };
 
-export default LogInPage;
+export default LogInComponent;
