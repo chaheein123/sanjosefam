@@ -32,21 +32,26 @@ const SignUpComponent = () => {
   const [userPw, setUserPw] = React.useState("");
   const [userPw2, setUserPw2] = React.useState("");
   const [logError, setLogError] = React.useState({
-    "nickname" : "a",
-    "email" : "",
-    "pw" : "",
-    "pw2" : "c",
+    "userNickname" : "",
+    "userEmail" : "",
+    "userPw" : "",
+    "userPw2" : "",
   });
 
-  const handleSubmit = () => {
-    if (!userNickname) {
-      // setLogError([...logError, "닉네임이 필요합니다"])
+  const handleSubmit = async() => {
+    // if (!userNickname && !userEmail && !userPw && !userPw2) {
+    //   return;
+    // }
+    if (!userNickname) { 
+      await setLogError({"userNickname": "닉네임을 입력해 주세요"});
     }
-
-
-
-
-
+    if (!userEmail) {
+      await setLogError({"userEmail": "이메일을 입력해 주세요"})
+    }
+    if (!userPw || !userPw2) {
+      await setLogError({"userPw": "비밀번호를 입력해 주세요"})
+    }
+    console.log(logError);
 
   };
 
@@ -66,6 +71,7 @@ const SignUpComponent = () => {
               className="signup-form-controls"
               onChange={(event)=>{
                 setUserNickname(event.target.value);
+                // setLogError({userNickname: ""})
               }}
             />
           </OverlayTrigger>
@@ -82,6 +88,7 @@ const SignUpComponent = () => {
               className="signup-form-controls"
               onChange={(event)=>{
                 setUserEmail(event.target.value);
+                // setLogError({userEmail: ""});
               }}
             />
           </OverlayTrigger>
@@ -98,6 +105,7 @@ const SignUpComponent = () => {
               className="signup-form-controls"
               onChange={(event)=>{
                 setUserPw(event.target.value);
+                // setLogError({userPw: ""});
               }}
             />
           </OverlayTrigger>
@@ -108,20 +116,21 @@ const SignUpComponent = () => {
             size="lg"
             onChange={(event)=>{
               setUserPw2(event.target.value);
+              // setLogError({userPw2: ""})
             }}
           />
 
           <p className="form-sub">
-            {logError.nickname}
+            {logError.userNickname}
           </p>
           <p className="form-sub">
-            {logError.email}
+            {logError.userEmail}
           </p>
           <p className="form-sub">
-            {logError.pw}
+            {logError.userPw}
           </p>
           <p className="form-sub">
-            {logError.pw2}
+            {logError.userPw2}
           </p>
 
           <Button
