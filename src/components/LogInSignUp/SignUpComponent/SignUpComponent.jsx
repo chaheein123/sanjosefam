@@ -35,29 +35,46 @@ const SignUpComponent = () => {
     "userNickname" : "",
     "userEmail" : "",
     "userPw" : "",
-    "userPw2" : "",
+    // "userPw2" : "",
   });
 
-  const handleSubmit = async() => {
-    // if (!userNickname && !userEmail && !userPw && !userPw2) {
-    //   return;
-    // }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!userNickname && !userEmail && !userPw && !userPw2) {
+      return;
+    }
+    
     if (!userNickname) { 
-      await setLogError({"userNickname": "닉네임을 입력해 주세요"});
+      setLogError(prevState => {
+        return({
+          ...prevState,
+          userNickname: "닉네임을 입력해 주세요."
+        })
+      });
     }
     if (!userEmail) {
-      await setLogError({"userEmail": "이메일을 입력해 주세요"})
+      setLogError(prevState => {
+        return({
+          ...prevState,
+          userEmail: "이메일을 입력해 주세요."
+        })
+      });
     }
     if (!userPw || !userPw2) {
-      await setLogError({"userPw": "비밀번호를 입력해 주세요"})
+      setLogError(prevState => {
+        return({
+          ...prevState,
+          userPw: "비밀번호를 입력해 주세요."
+        })
+      });
     }
-    console.log(logError);
 
   };
 
   return (
     <div className="SignUpComponent">
-      <Form className="signup-form">
+      <Form className="signup-form" onSubmit={handleSubmit}>
         <Form.Group>
           <OverlayTrigger
             placement="top"
@@ -70,8 +87,13 @@ const SignUpComponent = () => {
               size="lg"
               className="signup-form-controls"
               onChange={(event)=>{
+                setLogError(prevState => {
+                  return({
+                    ...prevState,
+                    userNickname: ""
+                  })
+                });
                 setUserNickname(event.target.value);
-                // setLogError({userNickname: ""})
               }}
             />
           </OverlayTrigger>
@@ -87,8 +109,13 @@ const SignUpComponent = () => {
               size="lg"
               className="signup-form-controls"
               onChange={(event)=>{
+                setLogError(prevState => {
+                  return({
+                    ...prevState,
+                    userEmail: ""
+                  })
+                });
                 setUserEmail(event.target.value);
-                // setLogError({userEmail: ""});
               }}
             />
           </OverlayTrigger>
@@ -104,8 +131,13 @@ const SignUpComponent = () => {
               size="lg"
               className="signup-form-controls"
               onChange={(event)=>{
+                setLogError(prevState => {
+                  return({
+                    ...prevState,
+                    userPw: ""
+                  })
+                });
                 setUserPw(event.target.value);
-                // setLogError({userPw: ""});
               }}
             />
           </OverlayTrigger>
@@ -115,8 +147,13 @@ const SignUpComponent = () => {
             placeholder="비밀번호 확인"
             size="lg"
             onChange={(event)=>{
+              setLogError(prevState => {
+                return({
+                  ...prevState,
+                  userPw: ""
+                })
+              });
               setUserPw2(event.target.value);
-              // setLogError({userPw2: ""})
             }}
           />
 
@@ -138,7 +175,7 @@ const SignUpComponent = () => {
             size="lg"
             block
             className="signup-button"
-            onClick={handleSubmit}
+            type="submit"
           >
             가입하기
           </Button>
