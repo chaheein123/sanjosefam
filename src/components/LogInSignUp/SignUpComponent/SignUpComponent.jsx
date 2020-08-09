@@ -8,20 +8,20 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import "./SignUpComponent.scss";
 
 const renderTooltip1 = (props) => (
-  <Tooltip id="button-tooltip" {...props}>
-    3글자 이상 입력 가능합니다.
+  <Tooltip {...props}>
+    3 ~ 14자 입력 가능합니다.
   </Tooltip>
 );
 
 const renderTooltip2 = (props) => (
-  <Tooltip id="button-tooltip" {...props}>
-    저희는 유저들의 이메일을 보호할것을 약속합니다.
+  <Tooltip {...props}>
+    저희는 유저의 이메일주소를 노출하지 않습니다.
   </Tooltip>
 );
 
 const renderTooltip3 = (props) => (
-  <Tooltip id="button-tooltip" {...props}>
-    6 ~ 32자 이어야 합니다.
+  <Tooltip {...props}>
+    6 ~ 32자 입력 가능합니다.
   </Tooltip>
 );
 
@@ -35,7 +35,6 @@ const SignUpComponent = () => {
     "userNickname" : "",
     "userEmail" : "",
     "userPw" : "",
-    // "userPw2" : "",
   });
 
   const handleSubmit = (event) => {
@@ -70,6 +69,46 @@ const SignUpComponent = () => {
       });
     }
 
+    // Password validation
+    if (userPw !== userPw2) {
+      setLogError(prevState => {
+        return({
+          ...prevState,
+          userPw: "입력한 비밀번호가 매칭하지 않습니다. 다시 입력해 주세요."
+        })
+      });
+    }
+
+    else {
+      if (userPw.length < 6 || userPw.length > 32) {
+        setLogError(prevState => {
+          return({
+            ...prevState,
+            userPw: "입력한 비밀번호가 6~32자 이어야 합니다."
+          })
+        });
+      }
+    }
+
+    // Nickname validation
+    if (userNickname.length < 3 || userNickname.length > 14) {
+      setLogError(prevState => {
+        return({
+          ...prevState,
+          userNickname: "입력한 닉네임이 3 ~ 14자 이어야 합니다."
+        })
+      });
+    } else {
+      let regex = /^[A-Za-z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]+$/;
+      if (!regex.test(userNickname)) {
+        setLogError(prevState => {
+          return({
+            ...prevState,
+            userNickname: "닉네임은 한영글자나 번호만 입력하실수 있습니다."
+          })
+        });
+      }
+    }
   };
 
   return (
