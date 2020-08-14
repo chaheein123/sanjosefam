@@ -8,7 +8,7 @@ import toolTips from "../../../bscomponents/SignUpComponent/Tooltip";
 
 import "./SignUpComponent.scss";
 
-const SignUpComponent = () => {
+const SignUpComponent = (props) => {
   const [renderTooltip1, renderTooltip2, renderTooltip3] = toolTips;
 
   const [userNickname, setUserNickname] = React.useState("");
@@ -28,7 +28,11 @@ const SignUpComponent = () => {
       return;
     }
 
-    AuthAPI.checkAndSetErrors(setLogError, userNickname, userEmail, userPw, userPw2);
+    if (AuthAPI.checkAndSetErrors(setLogError, userNickname, userEmail, userPw, userPw2)){
+      AuthAPI.register(userNickname, userEmail, userPw);
+      console.log(props, "prosp");
+      props.history.push("/home");
+    };
   };
 
   return (
