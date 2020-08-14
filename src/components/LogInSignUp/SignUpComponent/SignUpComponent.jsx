@@ -30,7 +30,6 @@ const SignUpComponent = (props) => {
 
     if (AuthAPI.checkAndSetErrors(setLogError, userNickname, userEmail, userPw, userPw2)){
       AuthAPI.register(userNickname, userEmail, userPw);
-      console.log(props, "prosp");
       props.history.push("/home");
     };
   };

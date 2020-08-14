@@ -1,5 +1,6 @@
 import axios from "../utils/httpClient";
 import React from 'react';
+import { useCookies } from 'react-cookie';
 
 class AuthApi {
 
@@ -77,8 +78,8 @@ class AuthApi {
     return isValid;
   };
 
-  static register(userNickname, userEmail, userPw) {
-    axios
+  static async register(userNickname, userEmail, userPw) {
+    await axios
       .post(
         "http://localhost:5000/api/auth/register",
         {
@@ -88,13 +89,15 @@ class AuthApi {
         },
         { withCredentials: true }
       )
-      .then(
-        response => {
-          console.log(response);
-        }
-      )
+  };
 
+  static authenticateToken(token) {
+    console.log("hihi");
   }
+
+
+
+  
 }
 
 
