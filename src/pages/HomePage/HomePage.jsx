@@ -12,13 +12,10 @@ export default class HomePage extends React.Component {
     this.state = {
 
     };
-    
-    
   };
 
   componentWillMount() {
-    Auth.authenticateToken("sdf");
-    console.log(cookies.get("token"));
+    Auth.authenticateToken(cookies.get("token"));
   };
 
   componentDidMount() {

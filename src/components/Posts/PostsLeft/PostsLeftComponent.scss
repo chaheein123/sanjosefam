@@ -11,21 +11,4 @@
     }
   }
 
-  .postsleft-top-posts {
-    @include subcomponents;
-    // color: black;
-    .postsleft-posts {
-      display: flex;
-      align-items: flex-start;
-
-      .postsleft-badges {
-        position: relative;
-        top: 3.2px;
-        margin-right: 0.68rem;
-        // width: 27px;
-      }
-
-    }
-  }
-
 };

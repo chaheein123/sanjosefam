@@ -1,5 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
+import {top10tags, topPosts} from "../../../data/dummydata";
 
 import "./PostsRightComponent.scss";
 
@@ -22,6 +24,27 @@ const PostsRightComponent = () => {
       >
         글쓰기
       </Button>
+
+      <div className="postsright-top-posts">
+        <h5>인기글</h5>
+        {
+          topPosts.map((post,index) => {
+            return(
+              <div key={index} className="postsleft-posts">
+                <Badge
+                variant="success"
+                className="postsleft-badges"
+                >
+                  {index+1}
+                </Badge>{' '}
+                {post.title}
+              </div>
+            )
+          })
+        }
+
+
+      </div>
 
     
 

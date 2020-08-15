@@ -1,6 +1,6 @@
 import React from 'react';
 import Badge from 'react-bootstrap/Badge';
-import {top10tags, topPosts} from "../../../data/dummydata";
+import {top10tags} from "../../../data/dummydata";
 
 import "./PostsLeftComponent.scss";
 
@@ -18,27 +18,6 @@ const PostsLeftComponent = () => {
             )
           })
         }
-      </div>
-
-      <div className="postsleft-top-posts">
-        <h5>인기글</h5>
-        {
-          topPosts.map((post,index) => {
-            return(
-              <div key={index} className="postsleft-posts">
-                <Badge
-                variant="success"
-                className="postsleft-badges"
-                >
-                  {index+1}
-                </Badge>{' '}
-                {post.title}
-              </div>
-            )
-          })
-        }
-
-
       </div>
     </div>
   )
