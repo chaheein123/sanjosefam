@@ -24,15 +24,15 @@ export default class PostsPage extends React.Component {
       <div className="PostsPage">
         <Container>
           <Row>
-            <Col xs={{ order: 1, span: 12}} md={{ order: 0, span: 4}} lg={2} className="posts-cols posts-left">
+            <Col xs={{ order: 1, span: 12}} md={{ order: 0, span: 4}} lg={{ order: 0, span: 2}} className="posts-cols posts-left">
               <PostsLeftComponent />
             </Col>
 
-            <Col xs={{ order: 0, span: 12}} md={{ order: 1, span: 8}} lg={7} className="posts-cols">
+            <Col xs={{ order: 0, span: 12}} md={{ order: 1, span: 8}} lg={{ order: 1, span: 7}} className="posts-cols">
               <PostsCenterComponent />
             </Col>
 
-            <Col xs={{ order: 2, span: 12}} md={{ order: 2, span: 4}} lg={3} className="posts-right posts-cols">
+            <Col xs={{ order: 2, span: 12}} md={{ order: 2, span: 4}} lg={{ order: 2, span: 3}} className="posts-right posts-cols">
               <PostsRightComponent />
             </Col>
           </Row>
