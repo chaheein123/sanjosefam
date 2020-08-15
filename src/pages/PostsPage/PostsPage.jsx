@@ -28,11 +28,12 @@ export default class PostsPage extends React.Component {
               <PostsLeftComponent />
             </Col>
 
-            <Col xs={{ order: 0, span: 12}} md={{ order: 1, span: 8}} lg={{ order: 1, span: 7}} className="posts-cols">
+            <Col xs={{ order: 0, span: 12}} md={{ order: 1, span: 8}} lg={{ order: 1, span: 7}} className="posts-cols posts-center">
               <PostsCenterComponent />
+              {/* paginations */}
             </Col>
 
-            <Col xs={{ order: 2, span: 12}} md={{ order: 2, span: 4}} lg={{ order: 2, span: 3}} className="posts-right posts-cols">
+            <Col xs={{ order: 2, span: 12}} md={{ order: 2, span: 4 }} lg={{ order: 2, span: 3}} className="posts-right posts-cols">
               <PostsRightComponent />
             </Col>
           </Row>

@@ -4,40 +4,41 @@
   height: 4000px;
   margin-top: 3rem;
 
+
   .posts-cols {
     // border: 1px black solid;
-    // height: 200px;
-    padding: 0 10px;
+    // height: 370px;
+    // border: 1px black solid;
+    // padding: 0 10px;
+    
+
   }
 
   .posts-left {
-    
-  }
-
-  .posts-right {
-    background-color: yellow;
-
-  }
-
-  .posts-right {
     // border: 1px black solid;
-    // @include media-breakpoint-down(xs) {
-    //   display: none;
-    // }
+    // height: auto;
+  }
 
-    // @include media-breakpoint-down(md) {
-    //   background-color: pink;
-    //   top: -170px;
-    // }
+  .posts-right {
+    // background-color: yellow;
 
-    // @include media-breakpoint-up(lg) {
-    //   position: sticky;
-    //   top: 300px;
-    // }
+  }
 
+  .posts-right {
     
+  }
 
+  .posts-center {
 
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      height: 18rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+      height: auto;
+    }
   }
 
 
