@@ -5,6 +5,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+import AuthAPI from "../../../services/Auth";
 
 import "./LogInComponent.scss";
 
@@ -24,7 +25,10 @@ const LogInComponent = () => {
     setLogError("");
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+
     if (!userEmail && !userPw) {
       return;
     } else if (!userEmail) {
@@ -33,7 +37,9 @@ const LogInComponent = () => {
       setLogError("비밀번호를 입력해 주세요.")
     } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail)) || userPw.length < 8 || userPw.length > 32) {
       setLogError("아이디 또는 비밀번호가 잘못되었습니다.");
-    }
+    };
+
+
   };
 
   return(

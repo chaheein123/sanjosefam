@@ -79,6 +79,10 @@ class AuthApi {
     return isValid;
   };
 
+  static async loginCheckSetError(setLogError) {
+    
+  };
+
   static async register(userNickname, userEmail, userPw) {
     await axios
       .post(
