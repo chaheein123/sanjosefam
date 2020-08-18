@@ -2,7 +2,7 @@ import React from "react";
 import Auth from "../../services/Auth";
 
 import "./HomePage.scss";
-import { withCookies, Cookies } from 'react-cookie';
+import { Cookies } from 'react-cookie';
 
 const cookies = new Cookies();
 
@@ -14,9 +14,9 @@ export default class HomePage extends React.Component {
     };
   };
 
-  componentWillMount() {
-    Auth.authenticateToken(cookies.get("token"));
-  };
+  // componentWillMount() {
+    // Auth.authenticateToken(cookies.get("token"));
+  // };
 
   componentDidMount() {
     // console.log(this.state.token);

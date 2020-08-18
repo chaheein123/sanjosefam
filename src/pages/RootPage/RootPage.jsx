@@ -1,15 +1,27 @@
 import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import { HeaderComponent } from "../../components/HeaderComponent/HeaderComponent";
 import PostsPage from "../PostsPage/PostsPage";
 import HomePage from "../HomePage/HomePage";
 import AuthPage from "../AuthPage/AuthPage";
+import AuthApi from "../../services/Auth";
+import { userInfoAction } from "../../appRedux/actions";
+import { useDispatch } from "react-redux";
 
 import "./RootPage.scss";
 
 export const RootPage = () => {
+  const dispatch = useDispatch();
+  let user;
+
+  React.useEffect(() => {
+    user = AuthApi.authenticateTokenRedux();
+    if (user) {
+      dispatch(userInfoAction.login(user));
+    }
+  }, [user]);
+
   return (
     <div className="RootPage">
       <Router>

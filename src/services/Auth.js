@@ -1,6 +1,7 @@
 import axios from "../utils/httpClient";
-import React from 'react';
-import { useCookies } from 'react-cookie';
+// import React from 'react';
+// import { useCookies } from 'react-cookie';
+import { Cookies } from 'react-cookie';
 
 class AuthApi {
 
@@ -91,17 +92,15 @@ class AuthApi {
       )
   };
 
-  static authenticateToken(token) {
-    console.log("hihi");
-  }
-
-
-
-  
+  static authenticateTokenRedux() {
+    const cookies = new Cookies();
+    const token = cookies.get("token");
+    try {
+      return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+      return null;
+    }
+  };
 }
-
-
-
-
 
 export default AuthApi;
