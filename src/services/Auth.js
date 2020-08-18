@@ -89,7 +89,8 @@ class AuthApi {
           userPw: userPw
         },
         { withCredentials: true }
-      )
+      );
+    return this.authenticateTokenRedux();
   };
 
   static authenticateTokenRedux() {

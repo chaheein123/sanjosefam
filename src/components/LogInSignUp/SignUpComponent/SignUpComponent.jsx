@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import AuthAPI from "../../../services/Auth";
 import toolTips from "../../../bscomponents/SignUpComponent/Tooltip";
+import { userInfoAction } from "../../../appRedux/actions";
+import { useDispatch } from "react-redux";
 
 import "./SignUpComponent.scss";
 
 const SignUpComponent = (props) => {
   const [renderTooltip1, renderTooltip2, renderTooltip3] = toolTips;
-
   const [userNickname, setUserNickname] = React.useState("");
   const [userEmail, setUserEmail] = React.useState("");
   const [userPw, setUserPw] = React.useState("");
@@ -21,6 +22,8 @@ const SignUpComponent = (props) => {
     "userPw" : "",
   });
 
+  const dispatch = useDispatch();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -29,8 +32,12 @@ const SignUpComponent = (props) => {
     }
 
     if (AuthAPI.checkAndSetErrors(setLogError, userNickname, userEmail, userPw, userPw2)){
-      AuthAPI.register(userNickname, userEmail, userPw);
-      props.history.push("/home");
+      let user = AuthAPI.register(userNickname, userEmail, userPw);
+      if (user) {
+        dispatch(userInfoAction.login(user));
+        props.history.push("/home");
+      }
+      
     };
   };
 

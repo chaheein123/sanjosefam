@@ -18,7 +18,7 @@ export const HeaderComponent = (props) => {
 
   React.useEffect(() => {
     console.log(userInfo);
-
+    
 
   }, [userInfo])
 
@@ -49,11 +49,16 @@ export const HeaderComponent = (props) => {
             게시판
           </li>
         </Link>
-        <Link className="Links navbar-menu-links" to="/auth/login">
-          <li className={props.history.location.pathname.includes("/auth") ? "navbar-underline" : null}>
-            로그인
-          </li>
-        </Link>
+
+        {
+          userInfo ? 
+            <span>logged in</span> :
+            <Link className="Links navbar-menu-links" to="/auth/login">
+              <li className={props.history.location.pathname.includes("/auth") ? "navbar-underline" : null}>
+                로그인
+              </li>
+            </Link>
+        }
 
         {/* <DropdownButton id="dropdown-basic-button" title="Menu" variant="secondary">
           <Link className="Links" to="/">
