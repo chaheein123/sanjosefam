@@ -15,13 +15,23 @@ export const HeaderComponent = (props) => {
 
   let userInfo = useSelector(state => state.userInfo);
   const currentRoute = props.history.location.pathname;
+  let [avatarShown, setAvatarShown] = React.useState(false);
+  const avatarButton = React.useRef(null);
+  const handleClickOutside = e => {
+    if (!avatarButton.current.contains(e.target)) {
+      setAvatarShown(false);
+    }
+  }
 
   React.useEffect(() => {
-    console.log(userInfo, "header!!!!");
     if (currentRoute === "/") {
       console.log(props);
       props.history.push("/home");
     }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, [userInfo, currentRoute])
 
   return (
@@ -44,18 +54,21 @@ export const HeaderComponent = (props) => {
 
         {
           userInfo ?
-            <div className="navbar-menu-links nav-avatar-wrapper">
+            <div ref={avatarButton} className="navbar-menu-links nav-avatar-wrapper" onClick={() => {setAvatarShown(true)}}>
               <li className="navbar-avatar-li">
                 <img src="images/icons/default-avatar.png" height="28" className="nav-avatar"/>
                 <img src="images/icons/avatar-arrow.png" height="11" className="nav-arrow"/>
               </li>
-              <div className="navbar-avatar-options">
-                wefwef
+              <div className={avatarShown ? "navbar-avatar-options" : "navbar-avatar-hidden"}>
+                <ul className="navbar-avatar-ul">
+                  <li>내 프로필</li>
+                  <li>로그아웃</li>
+                </ul>
               </div>
             </div>
             :
             <Link className="Links navbar-menu-links" to="/auth/login">
-              <li className={props.history.location.pathname.includes("/auth") ? "navbar-underline" : null}>
+              <li className={props.history.location.pathname.includes("/auth") ? "navbar-underline navbar-menu-links-list" : "navbar-menu-links-list" }>
                 로그인
               </li>
             </Link>
