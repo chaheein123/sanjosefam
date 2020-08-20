@@ -5,7 +5,7 @@ import { Cookies } from 'react-cookie';
 
 class AuthApi {
 
-  static checkAndSetErrors(setLogError, userNickname, userEmail, userPw, userPw2) {
+  static async checkAndSetErrors(setLogError, userNickname, userEmail, userPw, userPw2) {
     let isValid = true;
     if (!userNickname) {
       setLogError(prevState => {
@@ -111,7 +111,7 @@ class AuthApi {
       setLogError(prevState => {
         return({
           ...prevState,
-          userPw: "입력한 비밀번호가 매칭하지 않습니다. 다시 입력해 주세요."
+          userPw: "비밀번호는 6~32자 입니다."
         })
       });
       return false;
@@ -120,7 +120,7 @@ class AuthApi {
   };
 
   static async register(userNickname, userEmail, userPw) {
-    await axios
+    return await axios
       .post(
         "http://localhost:5000/api/auth/register",
         {
@@ -129,8 +129,49 @@ class AuthApi {
           userPw: userPw
         },
         { withCredentials: true }
-      );
-    return this.authenticateTokenRedux();
+      )
+      .then(
+        (response) => {
+          return response;
+        }
+      )
+      .catch(
+        (error) => {
+          return {
+            data: {
+              success: false,
+              message: "인터넷 네트워크에 오류가 있습니다. 다시 입력해 주세요."
+            }
+          }
+        }
+      )
+  };
+
+  static async login(userEmail, userPw) {
+    return await axios
+      .post(
+        "http://localhost:5000/api/auth/login",
+        {
+          userEmail,
+          userPw
+        },
+        { withCredentials: true }
+      )
+      .then(
+        (response) => {
+          return response
+        }
+      )
+      .catch(
+        (error) => {
+          return {
+            data: {
+              success: false,
+              message: "인터넷 네트워크에 오류가 있습니다. 다시 입력해 주세요."
+            }
+          };
+        }
+      )
   };
 
   static authenticateTokenRedux() {

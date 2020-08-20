@@ -17,7 +17,7 @@ export const HeaderComponent = (props) => {
   // const dispatch = useDispatch();
 
   React.useEffect(() => {
-    console.log(userInfo);
+    console.log(userInfo, "header!!!!");
     
 
   }, [userInfo])

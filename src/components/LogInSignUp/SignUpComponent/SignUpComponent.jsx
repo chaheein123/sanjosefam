@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import "./SignUpComponent.scss";
 
 const SignUpComponent = (props) => {
+  const dispatch = useDispatch();
   const [renderTooltip1, renderTooltip2, renderTooltip3] = toolTips;
   const [userNickname, setUserNickname] = React.useState("");
   const [userEmail, setUserEmail] = React.useState("");
@@ -22,22 +23,33 @@ const SignUpComponent = (props) => {
     "userPw" : "",
   });
 
-  const dispatch = useDispatch();
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
-
-    if (!userNickname && !userEmail && !userPw && !userPw2) {
-      return;
-    }
-
-    if (AuthAPI.checkAndSetErrors(setLogError, userNickname, userEmail, userPw, userPw2)){
-      let user = AuthAPI.register(userNickname, userEmail, userPw);
-      if (user) {
+    if (!userNickname && !userEmail && !userPw && !userPw2) return;
+    if (await AuthAPI.checkAndSetErrors(setLogError, userNickname, userEmail, userPw, userPw2)){
+      const response = await AuthAPI.register(userNickname, userEmail, userPw);
+      if (response.data.success) {
+        const user = AuthAPI.authenticateTokenRedux();
         dispatch(userInfoAction.login(user));
         props.history.push("/home");
+      } else {
+        setLogError(prevState => {
+          return({
+            ...prevState,
+            userEmail: response.data.message,
+          })
+        });
       }
-      
+
+
+
+
+
+      // let user = AuthAPI.register(userNickname, userEmail, userPw);
+      // if (user) {
+      //   dispatch(userInfoAction.login(user));
+      //   props.history.push("/home");
+      // }
     };
   };
 
