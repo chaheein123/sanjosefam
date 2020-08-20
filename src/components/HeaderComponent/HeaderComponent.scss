@@ -25,17 +25,37 @@
     font-size: 1.12rem;
 
     .navbar-menu-links {
+      // background-color: pink;
       height: 100%;
       align-items: center;
       display: flex;
       margin-left: 10px;
       cursor: pointer;
 
-      li {
+      .navbar-menu-links-list {
         height: 100%;
         display: flex;
         align-items: center;
         padding: 0 12px;
+      }
+    }
+
+    .nav-avatar-wrapper {
+      position: relative;
+      .navbar-avatar-li {
+        display: flex;
+        flex-direction: row;
+        padding: 0 12px;
+        
+        .nav-avatar {
+          border-radius: 4px;
+          position: relative;
+        }
+
+        .nav-arrow {
+          margin: auto auto auto 3px;
+          position: relative;
+        }
       }
     }
 

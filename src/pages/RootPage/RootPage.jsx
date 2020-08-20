@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { HeaderComponent } from "../../components/HeaderComponent/HeaderComponent";
 import PostsPage from "../PostsPage/PostsPage";
 import HomePage from "../HomePage/HomePage";
@@ -19,19 +19,19 @@ export const RootPage = () => {
     user = AuthApi.authenticateTokenRedux();
     if (user) {
       dispatch(userInfoAction.login(user));
-    }
+    };
   }, [user]);
 
   return (
-    <div className="RootPage">
-      <Router>
+    <Router>
+      <div className="RootPage">
         <Route path="/" component={ HeaderComponent } />
         <Switch>
           <Route exact path="/home" component={ HomePage } />
           <Route path="/posts" component={ PostsPage } />
           <Route path="/auth" component={ AuthPage } />
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   )
 };
