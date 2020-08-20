@@ -5,6 +5,7 @@ import { RootPage } from "./pages/RootPage/RootPage";
 import './App.scss';
 
 function App() {
+
   return (
     <div className="App">
       <RootPage />

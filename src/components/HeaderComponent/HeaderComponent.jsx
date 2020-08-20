@@ -6,17 +6,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import DropdownButton from 'react-bootstrap/DropdownButton';
 // import Dropdown from 'react-bootstrap/Dropdown'
+import { userInfoAction } from "../../appRedux/actions";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./HeaderComponent.scss";
 
 export const HeaderComponent = (props) => {
 
-  // React.useEffect(() => {
-  //   console.log(props.history.location.pathname)
-  // })
+  let userInfo = useSelector(state => state.userInfo);
+  // const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    console.log(userInfo, "header!!!!");
+    
+
+  }, [userInfo])
 
   return (
     <nav className="HeaderComponent">
+
+      {/* <button onClick={() => {
+        dispatch(userInfoAction.login({
+          nameid: 22222,
+          unique_name: "yoyoasdf"
+        }))
+      }}>
+        testinggg!
+      </button> */}
       
       <Link className="Links" to="/home"  style={{alignSelf: "center"}}>
         <img src="/images/logo/main_logo.png" className="honey-icon" alt="logo"/>
@@ -33,11 +49,16 @@ export const HeaderComponent = (props) => {
             게시판
           </li>
         </Link>
-        <Link className="Links navbar-menu-links" to="/auth/login">
-          <li className={props.history.location.pathname.includes("/auth") ? "navbar-underline" : null}>
-            로그인
-          </li>
-        </Link>
+
+        {
+          userInfo ? 
+            <span>logged in</span> :
+            <Link className="Links navbar-menu-links" to="/auth/login">
+              <li className={props.history.location.pathname.includes("/auth") ? "navbar-underline" : null}>
+                로그인
+              </li>
+            </Link>
+        }
 
         {/* <DropdownButton id="dropdown-basic-button" title="Menu" variant="secondary">
           <Link className="Links" to="/">
