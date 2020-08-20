@@ -56,6 +56,15 @@
           margin: auto auto auto 3px;
           position: relative;
         }
+      };
+
+      .navbar-avatar-options {
+        border: 1px black solid;
+        position: absolute;
+        top: 100%;
+        background-color: white;
+        margin-top: 5px;
+
       }
     }
 

@@ -49,6 +49,9 @@ export const HeaderComponent = (props) => {
                 <img src="images/icons/default-avatar.png" height="28" className="nav-avatar"/>
                 <img src="images/icons/avatar-arrow.png" height="11" className="nav-arrow"/>
               </li>
+              <div className="navbar-avatar-options">
+                wefwef
+              </div>
             </div>
             :
             <Link className="Links navbar-menu-links" to="/auth/login">
