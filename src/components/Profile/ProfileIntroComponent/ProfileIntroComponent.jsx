@@ -37,7 +37,7 @@ class ProfileIntroComponent extends React.Component {
           <img
             src={ this.state.userImg ? `${this.state.userImg}` : "/images/icons/default-avatar.png"}
             className="profile-img"
-            alt="프로필 사진"
+            alt="프로필 사진 Bay Area California Korean Community 한국동포 커뮤니티 웹사이트"
           />
         </Col>
         <Col xs="12" md="9" lg="10" className="profile-info-col">
@@ -46,8 +46,11 @@ class ProfileIntroComponent extends React.Component {
               <Row>
                 <Col>
                   <h2 className="profile-info-header profile-info-username">
-                    Chulgu
-                    
+                    {
+                      this.state.userInfo ?
+                        this.state.userInfo.userName :
+                        null
+                    }
                   </h2>
                 </Col>
               </Row>
@@ -63,9 +66,13 @@ class ProfileIntroComponent extends React.Component {
                       </h5>
                     </div>
                     <div className="profile-info-section-right">
-                      {/* <h5>weoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjow</h5> */}
                       <h5 className="profile-info-header">
-                        weoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoi
+                        {
+                          this.state.userInfo ?
+                            this.state.userInfo.userIntro :
+                            null
+                        }
+                      <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트"/>
                       </h5>
                     </div>
                   </div>
@@ -91,7 +98,10 @@ class ProfileIntroComponent extends React.Component {
                       </h5>
                     </div>
                     <div className="profile-info-section-right">
-                      <h5>weoifjowew</h5>
+                      <h5>
+                        San Francisco
+                        <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트"/>
+                      </h5>
                     </div>
                   </div>
                 </Col>
@@ -106,7 +116,14 @@ class ProfileIntroComponent extends React.Component {
                       </h5>
                     </div>
                     <div className="profile-info-section-right">
-                      <h5>weoifjowew</h5>
+                      <h5>
+                        {
+                          this.state.userInfo ?
+                            this.state.userInfo.userJob :
+                            null
+                        }
+                        <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트"/>
+                      </h5>
                     </div>
                   </div>
                 </Col>
@@ -121,7 +138,14 @@ class ProfileIntroComponent extends React.Component {
                       </h5>
                     </div>
                     <div className="profile-info-section-right">
-                      <h5>weoifjowew</h5>
+                      <h5>
+                        {
+                          this.state.userInfo ?
+                            this.state.userInfo.userRealName :
+                            null
+                        }
+                        <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트"/>
+                      </h5>
                     </div>
                   </div>
                 </Col>
