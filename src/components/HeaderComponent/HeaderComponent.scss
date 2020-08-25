@@ -42,9 +42,9 @@
 
     .nav-avatar-wrapper {
       position: relative;
-      // &:hover {
-      //   background-color: rgba(0, 0, 0, 0.048);
-      // }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.048);
+      }
       .navbar-avatar-li {
         display: flex;
         flex-direction: row;

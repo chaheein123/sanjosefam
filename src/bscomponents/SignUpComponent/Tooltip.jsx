@@ -3,7 +3,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 
 const renderTooltip1 = (props) => (
   <Tooltip {...props}>
-    3 ~ 14자 입력 가능합니다.
+    4 ~ 20자 영문, 숫자로 입력해 주세요.
   </Tooltip>
 );
 

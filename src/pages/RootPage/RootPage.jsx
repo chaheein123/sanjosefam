@@ -6,6 +6,7 @@ import PostsPage from "../PostsPage/PostsPage";
 import HomePage from "../HomePage/HomePage";
 import AuthPage from "../AuthPage/AuthPage";
 import AuthApi from "../../services/Auth";
+import ProfilePage from "../ProfilePage/ProfilePage";
 import { userInfoAction } from "../../appRedux/actions";
 import { useDispatch } from "react-redux";
 
@@ -30,6 +31,7 @@ export const RootPage = () => {
           <Route exact path="/home" component={ HomePage } />
           <Route path="/posts" component={ PostsPage } />
           <Route path="/auth" component={ AuthPage } />
+          <Route path="/in/:userName" component= { ProfilePage } />
         </Switch>
       </div>
     </Router>

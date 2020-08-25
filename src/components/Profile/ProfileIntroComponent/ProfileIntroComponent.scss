@@ -1,0 +1,54 @@
+@import "../../../mixins/main-mixins.scss";
+
+.ProfileIntroComponent {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.096);
+  padding: 2.3rem;
+
+  .profile-img {
+    border-radius: 6px;
+    width: 100%;
+    max-width: 9rem;
+  };
+
+  .profile-info-col {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+
+    .profile-info-flex-wrapper {
+      display: inline-block;
+      border: 1px black solid;
+      // width: 30%;
+
+      margin-right: 11rem;
+      @include media-breakpoint-down(sm) {
+        display: block;
+        margin-right: 0;
+      }
+      .profile-info-flex {
+        display: flex;
+        flex-direction: column;
+        border: 1px black solid;
+        width: 100%;
+
+        .profile-info-header {
+          line-height: 1.5;
+        };
+
+        .profile-info-username {
+          font-weight: bold;
+          @include media-breakpoint-down(sm) {
+            font-size: 1.8rem;
+          }
+    
+          @include media-breakpoint-down(sm) {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  };
+
+
+};
+

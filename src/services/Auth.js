@@ -1,6 +1,4 @@
 import axios from "../utils/httpClient";
-// import React from 'react';
-// import { useCookies } from 'react-cookie';
 import { Cookies } from 'react-cookie';
 
 class AuthApi {
@@ -16,21 +14,21 @@ class AuthApi {
       });
       isValid = false;
     } else {
-      if (userNickname.length < 3 || userNickname.length > 14) {
+      if (userNickname.length < 4 || userNickname.length > 20) {
         setLogError(prevState => {
           return({
             ...prevState,
-            userNickname: "입력한 닉네임이 3 ~ 14자 이어야 합니다."
+            userNickname: "4~20자 영문, 숫자로 입력해 주세요."
           })
         });
         isValid = false;
       } else {
-        let regex = /^[A-Za-z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]+$/;
+        let regex = /^[A-Za-z0-9]+$/;
         if (!regex.test(userNickname)) {
           setLogError(prevState => {
             return({
               ...prevState,
-              userNickname: "닉네임은 한영글자나 번호만 입력하실수 있습니다."
+              userNickname: "4~20자 영문, 숫자로 입력해 주세요."
             })
           });
           isValid = false;
@@ -122,7 +120,7 @@ class AuthApi {
   static async register(userNickname, userEmail, userPw) {
     return await axios
       .post(
-        "http://localhost:5000/api/auth/register",
+        "http://localhost:5000/auth/register",
         {
           userName : userNickname,
           userEmail: userEmail,
@@ -150,7 +148,7 @@ class AuthApi {
   static async login(userEmail, userPw) {
     return await axios
       .post(
-        "http://localhost:5000/api/auth/login",
+        "http://localhost:5000/auth/login",
         {
           userEmail,
           userPw

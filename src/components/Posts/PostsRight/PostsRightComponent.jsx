@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import {top10tags, topPosts} from "../../../data/dummydata";
+import { topPosts } from "../../../data/dummydata";
 
 import "./PostsRightComponent.scss";
 
