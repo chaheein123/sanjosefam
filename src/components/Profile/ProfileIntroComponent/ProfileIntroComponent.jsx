@@ -41,15 +41,101 @@ class ProfileIntroComponent extends React.Component {
           />
         </Col>
         <Col xs="12" md="9" lg="10" className="profile-info-col">
+          <Row>
+            <Col sm="12" lg="6">
+              <Row>
+                <Col>
+                  <h2 className="profile-info-header profile-info-username">
+                    Chulgu
+                    
+                  </h2>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Row className="profile-top-none">
+                    <br />
+                  </Row>
+                  <div className="profile-info-section">
+                    <div className="profile-info-section-left">
+                      <h5 className="profile-info-header">
+                        소개:
+                      </h5>
+                    </div>
+                    <div className="profile-info-section-right">
+                      {/* <h5>weoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjow</h5> */}
+                      <h5 className="profile-info-header">
+                        weoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoifjoweijijweoweoi
+                      </h5>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
 
-          {/* <h2 className="profile-info-header">
-            {
-              this.state.userInfo ?
-                this.state.userInfo.userName :
-                null
-            }
-          </h2> */}
-          <div className="profile-info-flex-wrapper">
+            <Col sm="12" lg="6">
+              <Row className="profile-top-none">
+                <br />
+                <br />
+                <br />
+              </Row>
+
+
+
+              <Row className="profile-info-right-row">
+                <Col>
+                  <div className="profile-info-section">
+                    <div className="profile-info-section-left">
+                      <h5 className="profile-info-header">
+                        거주시:
+                      </h5>
+                    </div>
+                    <div className="profile-info-section-right">
+                      <h5>weoifjowew</h5>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <div className="profile-info-section">
+                    <div className="profile-info-section-left">
+                      <h5 className="profile-info-header">
+                        직업:
+                      </h5>
+                    </div>
+                    <div className="profile-info-section-right">
+                      <h5>weoifjowew</h5>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <div className="profile-info-section">
+                    <div className="profile-info-section-left">
+                      <h5 className="profile-info-header">
+                        이름:
+                      </h5>
+                    </div>
+                    <div className="profile-info-section-right">
+                      <h5>weoifjowew</h5>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+
+
+
+
+            </Col>
+          </Row>
+
+
+
+          {/* <div className="profile-info-flex-wrapper">
             <div className="profile-info-flex">
               <h2 className="profile-info-header profile-info-username">Chulgu</h2>
               <h5 className="profile-info-header">내소개:</h5>
@@ -62,7 +148,7 @@ class ProfileIntroComponent extends React.Component {
               <h5 className="profile-info-header">직업: </h5>
               <h5 className="profile-info-header">이름: </h5>
             </div>
-          </div>
+          </div> */}
         </Col>
       </Row>
     )
