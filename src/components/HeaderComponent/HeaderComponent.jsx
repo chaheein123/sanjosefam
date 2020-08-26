@@ -4,10 +4,8 @@ import React from "react";
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
-import { userInfoAction } from "../../appRedux/actions";
-import { useSelector, useDispatch } from "react-redux";
+// import { userInfoAction } from "../../appRedux/actions";
+import { useSelector } from "react-redux";
 
 import "./HeaderComponent.scss";
 
@@ -34,6 +32,7 @@ export const HeaderComponent = (props) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
+    // eslint-disable-next-line
   }, [userInfo, currentRoute])
 
   return (

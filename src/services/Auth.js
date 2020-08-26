@@ -96,6 +96,7 @@ class AuthApi {
       });
       return false;
     }
+     // eslint-disable-next-line
     if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail))) {
       setLogError(prevState => {
         return({

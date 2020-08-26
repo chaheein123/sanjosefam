@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import axios from "../../../utils/httpClient";
@@ -14,9 +13,14 @@ class ProfileIntroComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInfo: null,
+      userinfo: null,
       modalShow: false,
     }
+  };
+
+  modalSave = (e) => {
+    console.log("save!!!!!", e);
+
   };
 
   componentDidMount() {
@@ -25,7 +29,7 @@ class ProfileIntroComponent extends React.Component {
       .then(
         response => {
           console.log(response.data, "hahahaha");
-          this.setState({userInfo: response.data})
+          this.setState({userinfo: response.data})
         }
       )
       .catch(
@@ -52,8 +56,8 @@ class ProfileIntroComponent extends React.Component {
                 <Col>
                   <h2 className="profile-info-header profile-info-username">
                     {
-                      this.state.userInfo ?
-                        this.state.userInfo.userName :
+                      this.state.userinfo ?
+                        this.state.userinfo.userName :
                         null
                     }
                   </h2>
@@ -64,7 +68,7 @@ class ProfileIntroComponent extends React.Component {
                   <Row className="profile-top-none">
                     <br />
                     {
-                      this.state.userInfo ?
+                      this.state.userinfo ?
                         null :
                         (
                           <div>
@@ -83,8 +87,8 @@ class ProfileIntroComponent extends React.Component {
                     <div className="profile-info-section-right">
                       <h5 className="profile-info-header">
                         {
-                          this.state.userInfo ?
-                            this.state.userInfo.userIntro :
+                          this.state.userinfo ?
+                            this.state.userinfo.userIntro :
                             null
                         }
                       <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트" onClick={() => this.setState({modalShow: true})}/>
@@ -131,8 +135,8 @@ class ProfileIntroComponent extends React.Component {
                     <div className="profile-info-section-right">
                       <h5>
                         {
-                          this.state.userInfo ?
-                            this.state.userInfo.userJob :
+                          this.state.userinfo ?
+                            this.state.userinfo.userJob :
                             null
                         }
                         <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트" onClick={() => this.setState({modalShow: true})}/>
@@ -153,8 +157,8 @@ class ProfileIntroComponent extends React.Component {
                     <div className="profile-info-section-right">
                       <h5>
                         {
-                          this.state.userInfo ?
-                            this.state.userInfo.userRealName :
+                          this.state.userinfo ?
+                            this.state.userinfo.userRealName :
                             null
                         }
                         <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트" onClick={() => this.setState({modalShow: true})}/>
@@ -170,8 +174,9 @@ class ProfileIntroComponent extends React.Component {
         <MyVerticallyCenteredModal
           show={this.state.modalShow}
           onHide={() => this.setState({modalShow: false})}
-          userInfo={this.state.userInfo}
+          userinfo={this.state.userinfo}
           backdrop="static"
+          // onSave={() => this.modalSave}
         />
       </Row>
     )
@@ -183,12 +188,13 @@ export default ProfileIntroComponent;
 // modal
 function MyVerticallyCenteredModal(props) {
   
-  let {userInfo} = props;
+  // let {userinfo} = props;
+  // const [isSaved, setIsSaved] = React.useState(false);
 
   React.useEffect(() => {
-    console.log("thus is the userinfo", userInfo)
-  });
+    // console.log("thus is the userinfo", userinfo)
 
+  });
 
   return (
     <Modal
@@ -220,7 +226,7 @@ function MyVerticallyCenteredModal(props) {
               <InputGroup.Prepend>
                 <InputGroup.Text>자기소개</InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl as="textarea" aria-label="With textarea" value={userInfo ? userInfo.userIntro : null}/>
+              <FormControl as="textarea" aria-label="With textarea" value={props.userinfo ? props.userinfo.userIntro : ""}/>
             </InputGroup>
           </Col>
 
@@ -230,9 +236,9 @@ function MyVerticallyCenteredModal(props) {
                 <InputGroup.Text id="basic-addon1">이름</InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
-                // placeholder="이름"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                value={props.userinfo ? props.userinfo.userRealName : "ㄱ3ㄱ"}
               />
             </InputGroup>
           </Col>

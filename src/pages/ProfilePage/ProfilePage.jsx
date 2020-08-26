@@ -1,14 +1,14 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { useDispatch } from "react-redux";
+// import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
+// import { useDispatch } from "react-redux";
 import ProfileIntroComponent from "../../components/Profile/ProfileIntroComponent/ProfileIntroComponent";
 
 import "./ProfilePage.scss";
 
 const ProfilePage = (props) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const routeUserName= props.match.params.userName;
   
   React.useEffect(() => {
