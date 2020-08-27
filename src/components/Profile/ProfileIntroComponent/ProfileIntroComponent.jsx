@@ -18,8 +18,8 @@ class ProfileIntroComponent extends React.Component {
     }
   };
 
-  modalSave = (e) => {
-    console.log("save!!!!!", e);
+  modalSave = () => {
+    console.log("지코", "saved!!!!!!")
 
   };
 
@@ -173,10 +173,12 @@ class ProfileIntroComponent extends React.Component {
 
         <MyVerticallyCenteredModal
           show={this.state.modalShow}
-          onHide={() => this.setState({modalShow: false})}
+          onHide={() => {
+            this.setState({userinfo: this.state.userinfo});
+            this.setState({modalShow: false});
+          }}
           userinfo={this.state.userinfo}
           backdrop="static"
-          // onSave={() => this.modalSave}
         />
       </Row>
     )
@@ -187,13 +189,18 @@ export default ProfileIntroComponent;
 
 // modal
 function MyVerticallyCenteredModal(props) {
-  
-  // let {userinfo} = props;
-  // const [isSaved, setIsSaved] = React.useState(false);
+  let originalUserRealName = props.userinfo ? props.userinfo.userRealName : "";
+  // let originalUserIntro = props.userinfo.userIntro;
+  // const [userRealName, setUserRealName] = React.useState(props.userinfo.userRealName);
+  // const [userIntro, setUserIntro] = React.useState(props.userinfo.userIntro);
+
+  // const setOriginal = () => {
+  //   setUserRealName(originalUserRealName);
+  //   setUserIntro(originalUserIntro);
+  // };
 
   React.useEffect(() => {
-    // console.log("thus is the userinfo", userinfo)
-
+    console.log(props.userinfo, "prooooops")
   });
 
   return (
@@ -204,15 +211,14 @@ function MyVerticallyCenteredModal(props) {
       centered
       className="profile-modal"
     >
-      <Modal.Header closeButton>
+      {/* <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           프로필 정보 업데이트
         </Modal.Title>
       </Modal.Header>
       <Modal.Body style={{textAlign: "center"}}>
-        {/* <h4>Centered Modal</h4> */}
         <img
-          src={ props.userImg ? `${props.userImg}` : "/images/icons/default-avatar.png"}
+          src={ props.userinfo.userImg ? `${props.userinfo.userImg}` : "/images/icons/default-avatar.png"}
           className="profile-modal-img"
           alt="프로필 사진 Bay Area California Korean Community 한국동포 커뮤니티 웹사이트"
           width="135"
@@ -226,7 +232,12 @@ function MyVerticallyCenteredModal(props) {
               <InputGroup.Prepend>
                 <InputGroup.Text>자기소개</InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl as="textarea" aria-label="With textarea" value={props.userinfo ? props.userinfo.userIntro : ""}/>
+              <FormControl
+                as="textarea"
+                aria-label="With textarea"
+                value={userIntro ? userIntro : ""}
+                onChange={(e) => setUserIntro(e.target.value)}
+              />
             </InputGroup>
           </Col>
 
@@ -238,25 +249,36 @@ function MyVerticallyCenteredModal(props) {
               <FormControl
                 aria-label="Username"
                 aria-describedby="basic-addon1"
-                value={props.userinfo ? props.userinfo.userRealName : "ㄱ3ㄱ"}
+                value={userRealName ? userRealName : ""}
+                onChange={(e) => setUserRealName(e.target.value)}
               />
             </InputGroup>
           </Col>
-            
-        </Row>
-        
 
+        </Row>
         <br />
 
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={props.onHide} size="lg">
+        <Button
+          variant="secondary"
+          onClick={() => {
+            setOriginal();
+            props.onHide();
+          }}
+          size="lg">
           닫기
         </Button>
-        <Button onClick={props.onHide} variant="success" size="lg">
+        <Button
+          onClick={() => {
+            props.onHide();
+
+          }}
+          variant="success"
+          size="lg">
           저장
         </Button>
-      </Modal.Footer>
+      </Modal.Footer> */}
     </Modal>
   );
 }
