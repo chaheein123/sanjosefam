@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { RootPage } from "./pages/RootPage/RootPage";
 
 import './App.scss';
@@ -7,9 +7,12 @@ import './App.scss';
 function App() {
 
   return (
-    <div className="App">
-      <RootPage />
-    </div>
+    <Router>
+      <div className="App">
+        {/* <RootPage /> */}
+        <Route path="/" component={ RootPage } />
+      </div>
+    </Router>
   )
 }
 

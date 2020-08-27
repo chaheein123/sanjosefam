@@ -1,5 +1,4 @@
 import React from 'react';
-import Badge from 'react-bootstrap/Badge';
 import {top10tags} from "../../../data/dummydata";
 
 import "./PostsLeftComponent.scss";

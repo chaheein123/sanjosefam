@@ -6,6 +6,7 @@ import PostsPage from "../PostsPage/PostsPage";
 import HomePage from "../HomePage/HomePage";
 import AuthPage from "../AuthPage/AuthPage";
 import AuthApi from "../../services/Auth";
+import ProfilePage from "../ProfilePage/ProfilePage";
 import { userInfoAction } from "../../appRedux/actions";
 import { useDispatch } from "react-redux";
 
@@ -16,22 +17,24 @@ export const RootPage = () => {
   let user;
 
   React.useEffect(() => {
+     // eslint-disable-next-line
     user = AuthApi.authenticateTokenRedux();
     if (user) {
       dispatch(userInfoAction.login(user));
-    }
+    };
   }, [user]);
 
   return (
-    <div className="RootPage">
-      <Router>
+    <Router>
+      <div className="RootPage">
         <Route path="/" component={ HeaderComponent } />
         <Switch>
           <Route exact path="/home" component={ HomePage } />
           <Route path="/posts" component={ PostsPage } />
           <Route path="/auth" component={ AuthPage } />
+          <Route path="/in/:userName" component= { ProfilePage } />
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   )
 };

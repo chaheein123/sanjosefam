@@ -4,7 +4,7 @@ import "./PostsCenterPostComponent.scss";
 
 const PostsCenterPostComponent = (props) => {
   
-  const { id, createdBy, ownImg, title, createdAt, tags, content } = props;
+  const { createdBy, ownImg, title, createdAt, content } = props;
   return (
     <div className="PostsCenterPostComponent">
       
