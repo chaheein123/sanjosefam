@@ -211,7 +211,7 @@ function MyVerticallyCenteredModal(props) {
       centered
       className="profile-modal"
     >
-      {/* <Modal.Header closeButton>
+      <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           프로필 정보 업데이트
         </Modal.Title>
@@ -278,7 +278,7 @@ function MyVerticallyCenteredModal(props) {
           size="lg">
           저장
         </Button>
-      </Modal.Footer> */}
+      </Modal.Footer>
     </Modal>
   );
 }
