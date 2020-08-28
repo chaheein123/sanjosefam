@@ -5,4 +5,17 @@
   padding: 1rem 1rem;
   margin-bottom: 2rem;
   color: rgba(0, 0, 0, 0.808);
+};
+
+@mixin modalcomponents {
+  position: fixed;
+  border: 1px black solid;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.527);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }

@@ -57,7 +57,8 @@
         display: inline-block;
         // background-color: blue;
         // border: 1px black solid;
-        min-width: 4.5rem;
+        min-width: 5.5rem;
+        
         // border: 1px black solid;
         @include media-breakpoint-down(sm) {
           // display: block;
@@ -79,14 +80,3 @@
     }
   }
 };
-
-.profile-modal {
-  // background-color: pink;
-  .modal-col {
-    margin-bottom: 1rem;
-  }
-
-  .profile-modal-img {
-    border-radius: 8px;
-  }
-}
