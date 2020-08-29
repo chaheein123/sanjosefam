@@ -9,7 +9,24 @@
     width: 90%;
     max-width: 40rem;
     overflow: scroll;
-    height: 30rem;
+    // height: 30rem;
+
+    .profile-modal-container {
+      margin-top: 0.5rem;
+      text-align: center;
+      padding-bottom: 1rem;
+
+      .profile-modal-border {
+        border-bottom: 1px rgba(79, 89, 172, 0.349) solid;
+      }
+      .profile-modal-header {
+        margin-top: 0.12rem;
+      }
+
+      .profile-modal-col {
+        margin-top: 1.3rem;
+      }
+    }
   };
 
 

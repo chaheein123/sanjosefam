@@ -1,6 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import axios from "../../../../utils/httpClient";
+import FormControl from 'react-bootstrap/FormControl';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Button from 'react-bootstrap/Button';
 
 import "./ProfileIntroModalComponent.scss";
 
@@ -16,7 +23,6 @@ class ProfileIntroModalComponent extends React.Component {
     this.state = {
       userName: null,
       userIntro: null,
-      userJob: null,
       userRealName: null,
       userImg: null,
     };
@@ -32,7 +38,6 @@ class ProfileIntroModalComponent extends React.Component {
             this.setState({
               userName: response.data.userName,
               userIntro: response.data.userIntro,
-              userJob: response.data.userJob,
               userRealName: response.data.userRealName,
               userImg: response.data.userImg,
             })
@@ -55,7 +60,6 @@ class ProfileIntroModalComponent extends React.Component {
             this.setState({
               userName: response.data.userName,
               userIntro: response.data.userIntro,
-              userJob: response.data.userJob,
               userRealName: response.data.userRealName,
               userImg: response.data.userImg,
             })
@@ -81,13 +85,181 @@ class ProfileIntroModalComponent extends React.Component {
     return (
       <div className="ProfileIntroModalComponent">
         <div className="profileintro-main" ref={this.insideModal}>
-          <div className="profile-modal-img-wrapper">
-            {this.state.userName} wef
-          </div>
+          <Container className="profile-modal-container">
+            <Row style={{textAlign: "left"}}>
+              <Col>
+                <h5>내정보 수정하기</h5>
+                <div className="profile-modal-border"/>
+              </Col>
+            </Row>
+            <Row style={{marginTop: "1.4rem"}}>
+              <Col>
+                <img src={this.state.userImg ? this.state.userImg : "/images/icons/default-avatar.png"} width="130" style={{borderRadius: "8px"}} alt="한국 동포 커뮤니티 Bay Area Korean Community Website"/>
+                <h4 className="profile-modal-header">
+                  {
+                    this.state.userName ?
+                      this.state.userName : null
+                  }
+                </h4>
+              </Col>
+            </Row>
 
-          <div className="">
+            <Row>
+              <Col className="profile-modal-col">
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>자기소개</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl as="textarea" aria-label="With textarea" rows="1"/>
+                </InputGroup>
+              </Col>
+            </Row>
 
-          </div>
+            <Row>
+              <Col xs="12" sm="6" className="profile-modal-col">
+                <Form.Control as="select">
+                  <option>Alameda</option>
+                  <option>bbbbbbbb</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                  <option>Alameda</option>
+                </Form.Control>
+              </Col>
+              <Col xs="12" sm="6" className="profile-modal-col">
+                <InputGroup className="mb-3">
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>이름</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    // placeholder="Username"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                </InputGroup>
+              </Col>
+            </Row>
+
+            <Row style={{marginTop: "1.3rem"}}>
+              <Col>
+                <div className="profile-modal-border"/>
+              </Col>
+            </Row>
+
+            <Row style={{textAlign: "right", marginTop: "1rem"}}>
+              <Col>
+              <Button variant="secondary" size="lg" style={{marginRight: "0.4rem"}}>닫기</Button>{' '}
+              <Button variant="success" size="lg">저장</Button>{' '}
+
+              </Col>
+            </Row>
+            
+
+
+          </Container>
+
 
 
         </div>

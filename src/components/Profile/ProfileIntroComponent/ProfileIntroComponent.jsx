@@ -2,10 +2,6 @@ import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import axios from "../../../utils/httpClient";
-// import Modal from 'react-bootstrap/Modal';
-// import Button from 'react-bootstrap/Button';
-// import InputGroup from 'react-bootstrap/InputGroup';
-// import FormControl from 'react-bootstrap/FormControl';
 import ProfileIntroModalComponent from "./ProfileIntroModalComponent/ProfileIntroModalComponent";
 import { Route, Link } from "react-router-dom";
 
@@ -140,7 +136,7 @@ class ProfileIntroComponent extends React.Component {
                 <br />
               </Row>
 
-              <Row className="profile-info-right-row">
+              {/* <Row className="profile-info-right-row">
                 <Col>
                   <div className="profile-info-section">
                     <div className="profile-info-section-left">
@@ -160,9 +156,9 @@ class ProfileIntroComponent extends React.Component {
                     </div>
                   </div>
                 </Col>
-              </Row>
+              </Row> */}
 
-              <Row>
+              <Row className="profile-info-right-row">
                 <Col>
                   <div className="profile-info-section">
                     <div className="profile-info-section-left">
@@ -174,10 +170,11 @@ class ProfileIntroComponent extends React.Component {
                       <h5>
                         {
                           this.state.userinfo ?
-                            this.state.userinfo.userRealName :
+                            <Link className="Links" to={`/in/${this.state.userinfo.userName}/profileedit`}>
+                              <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트" onClick={this.profileEdit}/>
+                            </Link> :
                             null
                         }
-                        <img src="/images/icons/pencil.png" height="23" className="pencil-icon" alt="Bay Area California Korean Community 한국동포 커뮤니티 웹사이트" onClick={this.profileEdit}/>
                       </h5>
                     </div>
                   </div>
