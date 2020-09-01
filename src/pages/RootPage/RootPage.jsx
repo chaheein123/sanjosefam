@@ -17,8 +17,6 @@ export const RootPage = () => {
   let user;
 
   React.useEffect(() => {
-    console.log(process.env.REACT_APP_BASE_URL);
-     // eslint-disable-next-line
     user = AuthApi.authenticateTokenRedux();
     if (user) {
       dispatch(userInfoAction.login(user));
